@@ -1,8 +1,8 @@
 <div class="footer">
             <div class="float-right">
-                10GB of <strong>250GB</strong> Free.
+                Aplikasi <strong> Ormas </strong> V.1.0.
             </div>
             <div>
-                <strong>Copyright</strong> Example Company &copy; 2014-2018
+                <strong>Copyright</strong> Diskominfo &copy;2020
             </div>
         </div>

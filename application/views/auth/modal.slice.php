@@ -103,7 +103,7 @@
             'id'=>'ubah-password',
             'name'=>'ubah_password',
             'class'=>'form-control',
-            'placeholder'=>'Masukkan password..'
+            'placeholder'=>'Masukkan password (Jika ingin diubah)'
          ];
          
          $level_akses = [

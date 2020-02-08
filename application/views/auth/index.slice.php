@@ -108,11 +108,14 @@ $(document).ready(function() {
                         $('#username').val("");
                         $('#password').val("");
                         $('#level-akses').val("");
-                        $('#modal-tambah').modal('hide');                        
+                        $('#modal-tambah').modal('hide');
+                        toastr.success('Akun berhasil ditambah','Yeay!');                        
                         table.ajax.reload();
                     },
                    error: function(data){
-
+                         $('#modal-tambah').modal('hide');
+                        toastr.warning('Akun tidak bisa ditambah, karena username sudah ada','Yah..');
+                        table.ajax.reload();                        
                     }
                 });
                 return false;
@@ -134,10 +137,14 @@ $(document).ready(function() {
                     cache:false,
                     async:false,
                     success: function(data){
-                        $('#modal-hapus').modal('hide');                        
+                        $('#modal-hapus').modal('hide');
+                        toastr.success('Akun berhasil dihapus','Sip!');                                                
                         table.ajax.reload();
                     },
                    error: function(data){
+                        $('#modal-hapus').modal('hide');
+                        toastr.warning('Akun gagal dihapus','Sip..');                                                
+                        table.ajax.reload();
 
                     }
                 });
@@ -173,11 +180,14 @@ $(document).ready(function() {
                     cache:false,
                     async:false,
                     success: function(data){
-                        $('#modal-ubah').modal('hide');                        
+                        $('#modal-ubah').modal('hide');
+                        toastr.success('Akun berhasil diubah','Nah!');                                                                        
                         table.ajax.reload();
                     },
                    error: function(data){
-
+                        $('#modal-ubah').modal('hide');
+                        toastr.warning('Akun tidak berhasil diubah','Yah..');                                                                        
+                        table.ajax.reload();
                     }
                 });
                 return false;

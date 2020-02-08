@@ -33,7 +33,7 @@
                 <div class="form-group">
                     {{form_input($password)}}
                 </div>
-                {{form_submit('submit', 'Login', 'class="btn btn-primary block full-width m-b"')}}
+                {{form_submit('submit', 'Masuk', 'class="btn btn-primary block full-width m-b"')}}
             {{form_close()}}
             <p class="m-t"> <small>Aplikasi Ormas &copy; 2020</small> </p>
         </div>

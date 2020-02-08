@@ -73,7 +73,7 @@ class Model_user extends CI_Model
         $this->db->where('username',$data['username']);
         $q = $this->db->get($this->_table);
         if($q->num_rows()>0){
-            return FALSE;
+            return $this->db->insert('');
         }else{
         return $this->db->insert($this->_table,$data);
         }

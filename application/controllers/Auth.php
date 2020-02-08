@@ -76,7 +76,7 @@ class Auth extends CI_Controller
 			 $sub_array[] = $row->nama_user;  
 			 $sub_array[] = $row->username;  
 			 $sub_array[] = $row->level_akses;  
-			 $sub_array[] = '<div class="btn-group"><button type="button" name="update" data-kode="'.$row->id_user.'" class="ubah_record btn btn-warning btn-xs">Update</button> <button type="button" name="delete" data-kode="'.$row->id_user.'" data-nama="'.$row->nama_user.'" class="hapus_record btn btn-danger btn-xs">Delete</button></div>';  
+			 $sub_array[] = '<div class="btn-group"><button type="button" name="ubah" data-kode="'.$row->id_user.'" class="ubah_record btn btn-warning btn-xs">Ubah</button> <button type="button" name="hapus" data-kode="'.$row->id_user.'" data-nama="'.$row->nama_user.'" class="hapus_record btn btn-danger btn-xs">Hapus</button></div>';  
 			 $data[] = $sub_array;  
 		}  
 		$output = array(  

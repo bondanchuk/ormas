@@ -18,7 +18,7 @@
                     </div>
                 </li>
                 <li class="@if($this->uri->segment(1) == 'dashboard')active@endif">
-                    <a href="{{site_url('dashboard')}}"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span></a>
+                    <a href="{{site_url('dashboard')}}"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span></a>
                 </li>
                 <li class="@if($this->uri->segment(1) == 'ormas')active@endif">
                     <a href="{{site_url('ormas')}}"><i class="fa fa-group"></i> <span class="nav-label">Ormas</span><span class="fa arrow"></span></a>
