@@ -6,10 +6,10 @@
                     <h2>Master</h2>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
-                            <a href="{{site_url('auth')}}">Akun</a>
+                            <a href="{{site_url('pejabat')}}">Pejabat</a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a>Data Akun</a>
+                            <a>Data Pejabat</a>
                         </li>
                         <li class="breadcrumb-item active">
                             <strong>Tabel</strong>
@@ -34,20 +34,24 @@
                                 <i class="fa fa-chevron-up"></i>
                             </a>
                             <a href="javascript:void(0)" data-toggle="modal" data-target="#modal-tambah">
-                                <i class="fa fa-plus"></i> Tambah Akun
+                                <i class="fa fa-plus"></i> Tambah Pejabat
                             </a>
                         </div>
                     </div>
                     <div class="ibox-content">
                         <div class="table-responsive">
-                    <table class="table table-striped table-bordered table-hover" id="tabel-user" width="100%">
+                    <table class="table table-striped table-bordered table-hover" id="tabel-pejabat" width="100%">
                     <thead class="text-center">
                     <tr>
                         <th width="1%">No</th>
+                        <th>Jabatan</th>
                         <th>Nama</th>
-                        <th>Username</th>
-                        <th>Level</th>
-                        <th width="5%">Aksi</th>
+                        <th>Pangkat</th>
+                        <th width="20%">NIP</th>
+                        <th>Dinas</th>
+                        <th>Provinsi</th>
+                        <th>Status</th>
+                        <th class="text-center" width="5%">Aksi</th>
                     </tr>
                     </thead>
                   </table>
@@ -59,80 +63,76 @@
             </div>
         </div>
 <!-- End -->                    
-@include('auth.modal')
+@include('pejabat.modal')
 @endsection
 @section('js')
 <script>
 $(document).ready(function() {
-      $('#level-akses').select2({
-            placeholder: "Pilih Level",
-            width: '100%',
-      });
-  
-      $('#ubah-level-akses').select2({
-            placeholder: "Pilih Level",
-            width: '100%',
-      });
-
-
-      var table = $('#tabel-user').DataTable({
+      var table = $('#tabel-pejabat').DataTable({
            "processing":true,  
            "serverSide":true,  
            "responsive": true,
            "order":[],  
            "ajax":{  
-                url:"{{base_url('auth/ambil_user')}}",  
+                url:"{{base_url('pejabat/ambil_pejabat')}}",  
                 type:"POST"  
            },  
            "columnDefs":[  
                 {  
-                     "targets":[0, 3, 4],  
+                     "targets":[0,8],  
                      "orderable":false,
                      "className":"text-center",
   
-                },  
+                },
+                {
+                    "targets":[3,4,5,6,7],
+                    "className":"text-center",
+                }  
            ],  
             "pageLength": 10,
             });
 
 
-            $('#tambah-user').submit('click',function(){
+            $('#tambah-pejabat').submit('click',function(){
                 $.ajax({
                     type : "POST",
-                    url  : "{{base_url('auth/tambah_user')}}",
+                    url  : "{{base_url('pejabat/tambah_pejabat')}}",
                     data:new FormData(this),
                     processData:false,
                     contentType:false,
                     cache:false,
                     async:false,
                     success: function(data){
-                        $('#nama-user').val("");
-                        $('#username').val("");
-                        $('#password').val("");
-                        $('#level-akses').val("");
+                        $('#Jabatan').val("");
+                        $('#Nama').val("");
+                        $('#Pangkat').val("");
+                        $('#NIP').val("");
+                        $('#Dinas').val("");
+                        $('#Provinsi').val("");
+                        $('#Status').val("");
                         $('#modal-tambah').modal('hide');
-                        toastr.success('Akun berhasil ditambah','Yeay!');                        
+                        toastr.success('Data berhasil ditambah','Yeay!');                        
                         table.ajax.reload();
                     },
                    error: function(data){
                          $('#modal-tambah').modal('hide');
-                        toastr.warning('Akun tidak bisa ditambah, karena username sudah ada','Yah..');
+                        toastr.warning('Data tidak bisa ditambah, karena sudah ada','Yah..');
                         table.ajax.reload();                        
                     }
                 });
                 return false;
             });
 
-            $('#tabel-user').on('click','.hapus_record',function(){
+            $('#tabel-pejabat').on('click','.hapus_record',function(){
                 $('#modal-hapus').modal('show');
-                $("#id-user").val($(this).data('kode'));
-                $("#nama-lengkap").html($(this).data('nama'));
+                $("#id-pejabat").val($(this).data('kode'));
+                $("#nama").html($(this).data('nama'));
             });
 
-            $('#hapus-user').submit('click',function(){
+            $('#hapus-pejabat').submit('click',function(){
                 $.ajax({
                     type : "POST",
-                    url  : "{{base_url('auth/hapus_user')}}",
+                    url  : "{{base_url('pejabat/hapus_pejabat')}}",
                     data:new FormData(this),
                     processData:false,
                     contentType:false,
@@ -140,42 +140,44 @@ $(document).ready(function() {
                     async:false,
                     success: function(data){
                         $('#modal-hapus').modal('hide');
-                        toastr.success('Akun berhasil dihapus','Sip!');                                                
+                        toastr.success('Data berhasil dihapus','Sip!');                                                
                         table.ajax.reload();
                     },
                    error: function(data){
                         $('#modal-hapus').modal('hide');
-                        toastr.warning('Akun gagal dihapus','Sip..');                                                
+                        toastr.warning('Data gagal dihapus','Sip..');                                                
                         table.ajax.reload();
-
                     }
                 });
                 return false;
             });
 
             
-            $('#tabel-user').on('click','.ubah_record',function(){
-                var id_user = $(this).data('kode');
+            $('#tabel-pejabat').on('click','.ubah_record',function(){
+                var id_pejabat = $(this).data('kode');
                 $.ajax({
-                    url:"{{base_url('auth/ambil_satu_user')}}",
+                    url:"{{base_url('pejabat/ambil_satu_pejabat')}}",
                     method:"POST",
-                    data:{id_user:id_user},
+                    data:{id_pejabat:id_pejabat},
                     dataType:"json",
                     success: function(data){
                         $('#modal-ubah').modal('show');
-                        $('#ubah-id-user').val(data.ubah_id_user);
-                        $('#ubah-nama-user').val(data.ubah_nama_user);
-                        $('#ubah-username').val(data.ubah_username);
-                        $('#ubah-level-akses').val(data.ubah_level_akses).trigger("change");
+                        $('#ubah-id-pejabat').val(data.ubah_id_pejabat);
+                        $('#ubah-jabatan').val(data.ubah_jabatan);
+                        $('#ubah-nama').val(data.ubah_nama);
+                        $('#ubah-pangkat').val(data.ubah_pangkat);
+                        $('#ubah-nip').val(data.ubah_nip);
+                        $('#ubah-dinas').val(data.ubah_dinas);
+                        $('#ubah-provinsi').val(data.ubah_provinsi);
+                        $('#ubah-status').val(data.ubah_status);
                     }
-
                 })
             });
 
-            $('#ubah-user').submit('click',function(){
+            $('#ubah-pejabat').submit('click',function(){
                 $.ajax({
                     type : "POST",
-                    url  : "{{base_url('auth/ubah_user')}}",
+                    url  : "{{base_url('pejabat/ubah_pejabat')}}",
                     data:new FormData(this),
                     processData:false,
                     contentType:false,
@@ -183,12 +185,12 @@ $(document).ready(function() {
                     async:false,
                     success: function(data){
                         $('#modal-ubah').modal('hide');
-                        toastr.success('Akun berhasil diubah','Nah!');                                                                        
+                        toastr.success('Data berhasil diubah','Nah!');                                                                        
                         table.ajax.reload();
                     },
                    error: function(data){
                         $('#modal-ubah').modal('hide');
-                        toastr.warning('Akun tidak berhasil diubah','Yah..');                                                                        
+                        toastr.warning('Data tidak berhasil diubah','Yah..');                                                                        
                         table.ajax.reload();
                     }
                 });

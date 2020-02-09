@@ -6,10 +6,10 @@
                     <h2>Master</h2>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
-                            <a href="{{site_url('auth')}}">Akun</a>
+                            <a href="{{site_url('pemeriksa')}}">Pemeriksa</a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a>Data Akun</a>
+                            <a>Data Pemeriksa</a>
                         </li>
                         <li class="breadcrumb-item active">
                             <strong>Tabel</strong>
@@ -34,20 +34,21 @@
                                 <i class="fa fa-chevron-up"></i>
                             </a>
                             <a href="javascript:void(0)" data-toggle="modal" data-target="#modal-tambah">
-                                <i class="fa fa-plus"></i> Tambah Akun
+                                <i class="fa fa-plus"></i> Tambah Pemeriksa
                             </a>
                         </div>
                     </div>
                     <div class="ibox-content">
                         <div class="table-responsive">
-                    <table class="table table-striped table-bordered table-hover" id="tabel-user" width="100%">
+                    <table class="table table-striped table-bordered table-hover" id="tabel-pemeriksa" width="100%">
                     <thead class="text-center">
                     <tr>
                         <th width="1%">No</th>
                         <th>Nama</th>
-                        <th>Username</th>
-                        <th>Level</th>
-                        <th width="5%">Aksi</th>
+                        <th>Pangkat</th>
+                        <th width="20%">NIP</th>
+                        <th>Status</th>
+                        <th class="text-center" width="5%">Aksi</th>
                     </tr>
                     </thead>
                   </table>
@@ -59,80 +60,73 @@
             </div>
         </div>
 <!-- End -->                    
-@include('auth.modal')
+@include('pemeriksa.modal')
 @endsection
 @section('js')
 <script>
 $(document).ready(function() {
-      $('#level-akses').select2({
-            placeholder: "Pilih Level",
-            width: '100%',
-      });
-  
-      $('#ubah-level-akses').select2({
-            placeholder: "Pilih Level",
-            width: '100%',
-      });
-
-
-      var table = $('#tabel-user').DataTable({
+      var table = $('#tabel-pemeriksa').DataTable({
            "processing":true,  
            "serverSide":true,  
            "responsive": true,
            "order":[],  
            "ajax":{  
-                url:"{{base_url('auth/ambil_user')}}",  
+                url:"{{base_url('pemeriksa/ambil_pemeriksa')}}",  
                 type:"POST"  
            },  
            "columnDefs":[  
                 {  
-                     "targets":[0, 3, 4],  
+                     "targets":[0,5],  
                      "orderable":false,
                      "className":"text-center",
   
-                },  
+                },
+                {
+                    "targets":[2,3,4],
+                    "className":"text-center",
+                }  
            ],  
             "pageLength": 10,
             });
 
 
-            $('#tambah-user').submit('click',function(){
+            $('#tambah-pemeriksa').submit('click',function(){
                 $.ajax({
                     type : "POST",
-                    url  : "{{base_url('auth/tambah_user')}}",
+                    url  : "{{base_url('pemeriksa/tambah_pemeriksa')}}",
                     data:new FormData(this),
                     processData:false,
                     contentType:false,
                     cache:false,
                     async:false,
                     success: function(data){
-                        $('#nama-user').val("");
-                        $('#username').val("");
-                        $('#password').val("");
-                        $('#level-akses').val("");
+                        $('#nama_pemeriksa').val("");
+                        $('#pangkat_pemeriksa').val("");
+                        $('#nip_pemeriksa').val("");
+                        $('#status').val("");
                         $('#modal-tambah').modal('hide');
-                        toastr.success('Akun berhasil ditambah','Yeay!');                        
+                        toastr.success('Data berhasil ditambah','Yeay!');                        
                         table.ajax.reload();
                     },
                    error: function(data){
                          $('#modal-tambah').modal('hide');
-                        toastr.warning('Akun tidak bisa ditambah, karena username sudah ada','Yah..');
+                        toastr.warning('Data tidak bisa ditambah, karena sudah ada','Yah..');
                         table.ajax.reload();                        
                     }
                 });
                 return false;
             });
 
-            $('#tabel-user').on('click','.hapus_record',function(){
+            $('#tabel-pemeriksa').on('click','.hapus_record',function(){
                 $('#modal-hapus').modal('show');
-                $("#id-user").val($(this).data('kode'));
-                $("#nama-lengkap").html($(this).data('nama'));
+                $("#id-pemeriksa").val($(this).data('kode'));
+                $("#nama").html($(this).data('nama'));
             });
 
-            $('#hapus-user').submit('click',function(){
+            $('#hapus-pemeriksa').submit('click',function(){
                 $.ajax({
                     type : "POST",
-                    url  : "{{base_url('auth/hapus_user')}}",
+                    url  : "{{base_url('pemeriksa/hapus_pemeriksa')}}",
                     data:new FormData(this),
                     processData:false,
                     contentType:false,
@@ -140,42 +134,41 @@ $(document).ready(function() {
                     async:false,
                     success: function(data){
                         $('#modal-hapus').modal('hide');
-                        toastr.success('Akun berhasil dihapus','Sip!');                                                
+                        toastr.success('Data berhasil dihapus','Sip!');                                                
                         table.ajax.reload();
                     },
                    error: function(data){
                         $('#modal-hapus').modal('hide');
-                        toastr.warning('Akun gagal dihapus','Sip..');                                                
+                        toastr.warning('Data gagal dihapus','Sip..');                                                
                         table.ajax.reload();
-
                     }
                 });
                 return false;
             });
 
             
-            $('#tabel-user').on('click','.ubah_record',function(){
-                var id_user = $(this).data('kode');
+            $('#tabel-pemeriksa').on('click','.ubah_record',function(){
+                var id_pemeriksa = $(this).data('kode');
                 $.ajax({
-                    url:"{{base_url('auth/ambil_satu_user')}}",
+                    url:"{{base_url('pemeriksa/ambil_satu_pemeriksa')}}",
                     method:"POST",
-                    data:{id_user:id_user},
+                    data:{id_pemeriksa:id_pemeriksa},
                     dataType:"json",
                     success: function(data){
                         $('#modal-ubah').modal('show');
-                        $('#ubah-id-user').val(data.ubah_id_user);
-                        $('#ubah-nama-user').val(data.ubah_nama_user);
-                        $('#ubah-username').val(data.ubah_username);
-                        $('#ubah-level-akses').val(data.ubah_level_akses).trigger("change");
+                        $('#ubah-id-pemeriksa').val(data.ubah_id_pemeriksa);
+                        $('#ubah-nama-pemeriksa').val(data.ubah_nama_pemeriksa);
+                        $('#ubah-pangkat-pemeriksa').val(data.ubah_pangkat_pemeriksa);
+                        $('#ubah-nip-pemeriksa').val(data.ubah_nip_pemeriksa);
+                        $('#ubah-status').val(data.ubah_status);
                     }
-
                 })
             });
 
-            $('#ubah-user').submit('click',function(){
+            $('#ubah-pemeriksa').submit('click',function(){
                 $.ajax({
                     type : "POST",
-                    url  : "{{base_url('auth/ubah_user')}}",
+                    url  : "{{base_url('pemeriksa/ubah_pemeriksa')}}",
                     data:new FormData(this),
                     processData:false,
                     contentType:false,
@@ -183,12 +176,12 @@ $(document).ready(function() {
                     async:false,
                     success: function(data){
                         $('#modal-ubah').modal('hide');
-                        toastr.success('Akun berhasil diubah','Nah!');                                                                        
+                        toastr.success('Data berhasil diubah','Nah!');                                                                        
                         table.ajax.reload();
                     },
                    error: function(data){
                         $('#modal-ubah').modal('hide');
-                        toastr.warning('Akun tidak berhasil diubah','Yah..');                                                                        
+                        toastr.warning('Data tidak berhasil diubah','Yah..');                                                                        
                         table.ajax.reload();
                     }
                 });

@@ -2,8 +2,6 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Model_user extends CI_Model
 {
-    private $_table = 'tb_user';
-
       var $table = "tb_user";  
       var $select_column = array("id_user", "nama_user", "username", "password", "level_akses");  
       var $order_column = array(null, "nama_user", "username", null, null);  
@@ -53,13 +51,13 @@ class Model_user extends CI_Model
     public function dataLogin($username)
     {
         $this->db->where('username', $username);
-        return $this->db->get($this->_table);
+        return $this->db->get($this->table);
     }
 
     function ambilSatuUser($id_user)
     {
         $this->db->where('id_user', $id_user);
-        return $this->db->get($this->_table)->result();
+        return $this->db->get($this->table)->result();
     }
 
     function tambahUser()
@@ -71,11 +69,11 @@ class Model_user extends CI_Model
             'level_akses'=> $this->input->post('level_akses'),
         );
         $this->db->where('username',$data['username']);
-        $q = $this->db->get($this->_table);
+        $q = $this->db->get($this->table);
         if($q->num_rows()>0){
             return $this->db->insert('');
         }else{
-        return $this->db->insert($this->_table,$data);
+        return $this->db->insert($this->table,$data);
         }
     }
     
@@ -96,13 +94,13 @@ class Model_user extends CI_Model
                 'level_akses'=> $this->input->post('ubah_level_akses'),
             );
         }
-        return $this->db->update($this->_table, $data, $id);
+        return $this->db->update($this->table, $data, $id);
     }
     
     function hapusUser()
     {   
         $id['id_user'] = $this->input->post('id_user');
-        return $this->db->delete($this->_table, $id);
+        return $this->db->delete($this->table, $id);
     }
 
 }

@@ -28,9 +28,9 @@
                         <li class="{{$this->uri->segment(1) == 'ormas' ? 'active': ''}}"><a href="{{site_url('ormas')}}">Data Ormas</a></li>
                     </ul>
                 </li>
-                <li class="@if($this->uri->segment(1) == 'auth' and 'pemeriksa' and 'pejabat')active @endif">
+                <li class="@if($this->uri->segment(1) == 'auth' ||  $this->uri->segment(1) == 'pemeriksa' || $this->uri->segment(1) == 'pejabat')active @endif">
                     <a href=""><i class="fa fa-wrench"></i> <span class="nav-label">Master</span><span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level collapse @if($this->uri->segment(1) == 'auth' and 'pemeriksa' and 'pejabat') ? in @endif">
+                    <ul class="nav nav-second-level collapse @if($this->uri->segment(1) == 'auth' ||  $this->uri->segment(1) == 'pemeriksa' || $this->uri->segment(1) == 'pejabat') in @endif">
                         <li class="{{$this->uri->segment(1) == 'auth' ? 'active': ''}}"><a href="{{site_url('auth')}}">Akun</a></li>
                         <li class="{{$this->uri->segment(1) == 'pemeriksa' ? 'active': ''}}"><a href="{{site_url('pemeriksa')}}">Pemeriksa</a></li>
                         <li class="{{$this->uri->segment(1) == 'pejabat' ? 'active': ''}}"><a href="{{site_url('pejabat')}}">Pejabat</a></li>
