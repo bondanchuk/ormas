@@ -67,6 +67,7 @@ $(document).ready(function() {
 
 
       var table = $('#tabel-user').DataTable({
+           "dom": 'lTfgitp',
            "processing":true,  
            "serverSide":true,  
            "responsive": true,

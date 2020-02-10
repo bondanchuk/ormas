@@ -18,48 +18,46 @@
 
 <!--  Isi Kontent -->
 <div class="wrapper wrapper-content animated fadeInRight">
-            <div class="row">
-                <div class="col-lg-12">
+        <div class="row">
+            <div class="col-lg-12">
                 <div class="ibox ">
                     <div class="ibox-title">
-                        <h5>Tabel</h5>
+                        <h5>Data Pejabat</h5>
                         <div class="ibox-tools">
                             <a href="javascript:void(0)" class="text-primary" data-toggle="modal" data-target="#modal-tambah">
-                               <i class="fa fa-plus"></i> Tambah Pejabat
+                            <i class="fa fa-plus"></i> Tambah Pejabat
                             </a>
                         </div>
                     </div>
                     <div class="ibox-content">
                         <div class="table-responsive">
-                    <table class="table table-striped table-bordered table-hover" id="tabel-pejabat" width="100%">
-                    <thead class="text-center">
-                    <tr>
-                        <th width="1%">No</th>
-                        <th>Jabatan</th>
-                        <th>Nama</th>
-                        <th>Pangkat</th>
-                        <th width="20%">NIP</th>
-                        <th>Dinas</th>
-                        <th>Provinsi</th>
-                        <th>Status</th>
-                        <th class="text-center" width="5%">Aksi</th>
-                    </tr>
-                    </thead>
-                  </table>
-                        </div>
-
+                            <table class="table table-striped table-bordered table-hover dt" id="tabel-pejabat" width="100%">
+                                <thead class="text-center">
+                                    <tr>
+                                        <th width="1%">No</th>
+                                        <th>Jabatan</th>
+                                        <th>Nama</th>
+                                        <th>Pangkat</th>
+                                        <th width="20%">NIP</th>
+                                        <th>Dinas</th>
+                                        <th>Provinsi</th>
+                                        <th>Status</th>
+                                        <th class="text-center" width="5%">Aksi</th>
+                                    </tr>
+                                </thead>
+                            </table>
                     </div>
                 </div>
             </div>
-            </div>
         </div>
+    </div>
+</div>
 <!-- End -->                    
 @include('pejabat.modal')
 @endsection
 @section('js')
 <script>
 $(document).ready(function() {
-
     $('#Status').select2({
             placeholder: "Pilih Status",
             width: '100%',
@@ -73,6 +71,7 @@ $(document).ready(function() {
       });
 
       var table = $('#tabel-pejabat').DataTable({
+           "dom": 'lTfgitp',
            "processing":true,  
            "serverSide":true,  
            "responsive": true,
@@ -115,12 +114,12 @@ $(document).ready(function() {
                         $('#Provinsi').val("");
                         $('#Status').val("");
                         $('#modal-tambah').modal('hide');
-                        toastr.success('Data berhasil ditambah','Yeay!');                        
+                        toastr.success('Data berhasil ditambah','Berhasil');                        
                         table.ajax.reload();
                     },
                    error: function(data){
                          $('#modal-tambah').modal('hide');
-                        toastr.warning('Data tidak bisa ditambah, karena sudah ada','Yah..');
+                        toastr.warning('Data tidak bisa ditambah, karena sudah ada','Gagal');
                         table.ajax.reload();                        
                     }
                 });
@@ -144,12 +143,12 @@ $(document).ready(function() {
                     async:false,
                     success: function(data){
                         $('#modal-hapus').modal('hide');
-                        toastr.success('Data berhasil dihapus','Sip!');                                                
+                        toastr.success('Data berhasil dihapus','Berhasil');                                                
                         table.ajax.reload();
                     },
                    error: function(data){
                         $('#modal-hapus').modal('hide');
-                        toastr.warning('Data gagal dihapus','Sip..');                                                
+                        toastr.warning('Data gagal dihapus','Gagal');                                                
                         table.ajax.reload();
                     }
                 });
@@ -189,12 +188,12 @@ $(document).ready(function() {
                     async:false,
                     success: function(data){
                         $('#modal-ubah').modal('hide');
-                        toastr.success('Data berhasil diubah','Nah!');                                                                        
+                        toastr.success('Data berhasil diubah','Berhasil');                                                                        
                         table.ajax.reload();
                     },
                    error: function(data){
                         $('#modal-ubah').modal('hide');
-                        toastr.warning('Data tidak berhasil diubah','Yah..');                                                                        
+                        toastr.warning('Data tidak berhasil diubah','Gagal');                                                                        
                         table.ajax.reload();
                     }
                 });

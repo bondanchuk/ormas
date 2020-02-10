@@ -17,6 +17,7 @@
     <link href="{{site_url('assets/css/plugins/dataTables/datatables.min.css')}}" rel="stylesheet">
     <link href="{{site_url('assets/css/plugins/chosen/bootstrap-chosen.css')}}" rel="stylesheet">
     <link href="{{site_url('assets/css/plugins/datapicker/datepicker3.css')}}" rel="stylesheet">
+    <link href="{{site_url('assets/css/plugins/switchery/switchery.css')}}" rel="stylesheet">
     
     <link href="{{site_url('assets/css/plugins/select2/select2.min.css')}}" rel="stylesheet">
 
@@ -89,6 +90,10 @@
 
     <!-- Toastr -->
     <script src="{{site_url('assets/js/plugins/toastr/toastr.min.js')}}"></script>
+
+    <!-- Switchery  -->
+    <script src="{{site_url('assets/js/plugins/switchery/switchery.js')}}"></script>
+    
 @yield('js')
 </body>
 </html>

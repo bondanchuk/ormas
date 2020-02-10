@@ -14,8 +14,4 @@ class Ormas extends CI_Controller
     {
         view('ormas.verif_ormas');
     }
-    public function tambah()
-    {
-        view('ormas.verif_ormas');
-    }
 }

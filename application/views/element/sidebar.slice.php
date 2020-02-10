@@ -8,12 +8,7 @@
                         <img alt="image" class="rounded-circle" src="{{site_url('assets/img/profile_small.jpg')}}"/>
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="block m-t-xs font-bold">{{$this->session->userdata('NAMA')}}</span>
-                            <span class="text-muted text-xs block">{{$this->session->userdata('LEVEL')}} <b class="caret"></b></span>
                         </a>
-                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                            <li class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="{{site_url('auth/logout')}}">Logout</a></li>
-                        </ul>
                     </div>
                     <div class="logo-element">
                         ORMAS
@@ -26,7 +21,6 @@
                     <a href=""><i class="fa fa-group"></i> <span class="nav-label">Data Ormas</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
                         <li class="{{$this->uri->segment(1) == 'ormas' ? 'active': ''}}"><a href="{{site_url('ormas')}}">Data Ormas</a></li>
-                        <li class="{{$this->uri->segment(2) == 'tambah' ? 'active': ''}}"><a href="{{site_url('ormas/tambah')}}">Tambah Data Ormas</a></li>
                         <li class="{{$this->uri->segment(2) == 'verif' ? 'active': ''}}"><a href="{{site_url('ormas/verif')}}">Verifikasi Data Ormas</a></li>
                     </ul>
                 </li>
