@@ -1,3 +1,5 @@
+
+@if($this->session->userdata('login_status') == TRUE)
 <nav class="navbar-default navbar-static-side" role="navigation">
         <div class="sidebar-collapse">
             <ul class="nav metismenu" id="side-menu">
@@ -39,3 +41,27 @@
 
         </div>
     </nav>
+    @else
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element">
+                        <img alt="image" class="rounded-circle" src="{{site_url('assets/img/profile_small.jpg')}}"/>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="block m-t-xs font-bold">Tamu</span>
+                        </a>
+                    </div>
+                    <div class="logo-element">
+                        ORMAS
+                    </div>
+                </li>
+                <li class="@if($this->uri->segment(1) == 'dashboard')active@endif">
+                    <a href="{{site_url('dashboard')}}"><i class="fa fa-th-large"></i> <span class="nav-label">Lihat Data Ormas</span></a>
+                </li>
+
+            </ul>
+
+        </div>
+    </nav>
+    @endif
