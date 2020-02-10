@@ -7,8 +7,8 @@
                 <h1><img src="{{site_url('assets/img/bintan.png')}}" width="100" height="100"></h1>
 
             </div>
-            <h3>Login - Ormas</h3>
-            <p>Aplikasi untuk mendata ormas-ormas yang ada di Kabupaten Bintan
+            <h3>Login - ORMAS</h3>
+            <p>Kabupaten Bintan
                 <!--Continually expanded and constantly improved Inspinia Admin Them (IN+)-->
             </p>
             <div class="text-warning">{{$pesan}}</div>          
@@ -35,7 +35,7 @@
                 </div>
                 {{form_submit('submit', 'Masuk', 'class="btn btn-primary block full-width m-b"')}}
             {{form_close()}}
-            <p class="m-t"> <small>Aplikasi Ormas &copy; 2020</small> </p>
+            <p class="m-t"> <strong>Copyright &copy; 2020</strong> Diskominfo All Right Reserved </p>
         </div>
     </div>
 @endsection
