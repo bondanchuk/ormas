@@ -3,16 +3,10 @@
 <!-- Bread Crumb -->
 <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-lg-10">
-                    <h2>Master</h2>
+                    <h2>Manajemen Data</h2>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
                             <a href="{{site_url('pejabat')}}">Pejabat</a>
-                        </li>
-                        <li class="breadcrumb-item">
-                            <a>Data Pejabat</a>
-                        </li>
-                        <li class="breadcrumb-item active">
-                            <strong>Tabel</strong>
                         </li>
                     </ol>
                 </div>
@@ -30,11 +24,8 @@
                     <div class="ibox-title">
                         <h5>Tabel</h5>
                         <div class="ibox-tools">
-                            <a class="collapse-link">
-                                <i class="fa fa-chevron-up"></i>
-                            </a>
-                            <a href="javascript:void(0)" data-toggle="modal" data-target="#modal-tambah">
-                                <i class="fa fa-plus"></i> Tambah Pejabat
+                            <a href="javascript:void(0)" class="text-primary" data-toggle="modal" data-target="#modal-tambah">
+                               <i class="fa fa-plus"></i>Tambah Pejabat
                             </a>
                         </div>
                     </div>

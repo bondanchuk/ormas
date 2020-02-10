@@ -8,27 +8,9 @@
                 <div class="col-lg-12">
                 <div class="ibox ">
                     <div class="ibox-title">
-                        <h5>Tabel</h5>
-                        <div class="ibox-tools">
-                            <a class="collapse-link">
-                                <i class="fa fa-chevron-up"></i>
-                            </a>
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                <i class="fa fa-wrench"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-user">
-                                <li><a href="#" class="dropdown-item">Config option 1</a>
-                                </li>
-                                <li><a href="#" class="dropdown-item">Config option 2</a>
-                                </li>
-                            </ul>
-                            <a class="close-link">
-                                <i class="fa fa-times"></i>
-                            </a>
-                        </div>
+                        <h5>Dashboard</h5>
                     </div>
                     <div class="ibox-content">
-
                         <div class="table-responsive">
                     <table class="table table-striped table-bordered table-hover dataTables-example" >
                     <thead>
@@ -478,9 +460,9 @@
                 dom: '<"html5buttons"B>lTfgitp',
                 buttons: [
                     { extend: 'copy'},
-                    {extend: 'csv'},
-                    {extend: 'excel', title: 'ExampleFile'},
-                    {extend: 'pdf', title: 'ExampleFile'},
+                    {extend: 'csv', title: 'Data_Ormas_CSV'},
+                    {extend: 'excel', title: 'Data_Ormas_Excel'},
+                    {extend: 'pdf', title: 'Data_Ormas_PDF'},
 
                     {extend: 'print',
                      customize: function (win){
