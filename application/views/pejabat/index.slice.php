@@ -25,7 +25,7 @@
                         <h5>Tabel</h5>
                         <div class="ibox-tools">
                             <a href="javascript:void(0)" class="text-primary" data-toggle="modal" data-target="#modal-tambah">
-                               <i class="fa fa-plus"></i>Tambah Pejabat
+                               <i class="fa fa-plus"></i> Tambah Pejabat
                             </a>
                         </div>
                     </div>
