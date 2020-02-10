@@ -13,8 +13,6 @@
 					<h2>
 						Form Pendaftaran Ormas
 					</h2>
-
-
 						{{form_open_multipart('register/add', ['id' => 'form', 'class' => 'wizard-big'])}}
 						<h1>Data Ormas</h1>
 						<fieldset>
@@ -697,82 +695,90 @@
 						'required'=>'required'
 						];
 
-						$verif01 = [
+						$verif08 = [
 						'type'=>'file',
-						'id'=>'verif01',
-						'name'=>'verif01',
+						'id'=>'verif08',
+						'name'=>'verif08',
 						'class'=>'form-control',
 						'required'=>'required'
 						];
 
-						$verif01 = [
+						$verif09 = [
 						'type'=>'file',
-						'id'=>'verif01',
-						'name'=>'verif01',
+						'id'=>'verif09',
+						'name'=>'verif09',
 						'class'=>'form-control',
 						'required'=>'required'
 						];
 
-						$verif01 = [
+						$verif10 = [
 						'type'=>'file',
-						'id'=>'verif01',
-						'name'=>'verif01',
+						'id'=>'verif10',
+						'name'=>'verif10',
 						'class'=>'form-control',
 						'required'=>'required'
 						];
 
-						$verif01 = [
+						$verif11 = [
 						'type'=>'file',
-						'id'=>'verif01',
-						'name'=>'verif01',
+						'id'=>'verif11',
+						'name'=>'verif11',
 						'class'=>'form-control',
 						'required'=>'required'
 						];
 
-						$verif01 = [
+						$verif12 = [
 						'type'=>'file',
-						'id'=>'verif01',
-						'name'=>'verif01',
+						'id'=>'verif12',
+						'name'=>'verif12',
 						'class'=>'form-control',
 						'required'=>'required'
 						];
 
-						$verif01 = [
+						$verif13 = [
 						'type'=>'file',
-						'id'=>'verif01',
-						'name'=>'verif01',
+						'id'=>'verif13',
+						'name'=>'verif13',
 						'class'=>'form-control',
 						'required'=>'required'
 						];
 
-						$verif01 = [
+						$verif14 = [
 						'type'=>'file',
-						'id'=>'verif01',
-						'name'=>'verif01',
+						'id'=>'verif14',
+						'name'=>'verif14',
 						'class'=>'form-control',
 						'required'=>'required'
 						];
 
-						$verif01 = [
+						$verif15 = [
 						'type'=>'file',
-						'id'=>'verif01',
-						'name'=>'verif01',
+						'id'=>'verif15',
+						'name'=>'verif15',
 						'class'=>'form-control',
 						'required'=>'required'
 						];
 
-						$verif01 = [
+						$verif16 = [
 						'type'=>'file',
-						'id'=>'verif01',
-						'name'=>'verif01',
+						'id'=>'verif16',
+						'name'=>'verif16',
 						'class'=>'form-control',
 						'required'=>'required'
 						];
 
-						$verif01 = [
+						$verif17 = [
 						'type'=>'file',
-						'id'=>'verif01',
-						'name'=>'verif01',
+						'id'=>'verif17',
+						'name'=>'verif17',
+						'class'=>'form-control',
+						'required'=>'required'
+						];
+
+						$verif18 = [
+						'type'=>'file',
+						'id'=>'verif18',
+						'name'=>'verif18',
 						'class'=>'form-control',
 						'required'=>'required'
 						];
@@ -967,12 +973,6 @@
 			}
 		});
 
-
-
-		var d = new Date();
-		var currMonth = d.getMonth();
-		var currYear = d.getFullYear();
-		var startDate = new Date(currYear, currMonth, 1);
 		$('#data_1 .input-group.date').datepicker({
 			"setDate" : new Date(),
 			todayBtn: "linked",
@@ -1013,10 +1013,6 @@
 		$("#tanggal-daftar").datepicker().datepicker("setDate", new Date());
 		$("#tanggal-lahir").datepicker().datepicker("setDate", new Date());
 		$("#tanggallahir-ketua").datepicker().datepicker("setDate", new Date());
-
-
-
-
 	});
 
 

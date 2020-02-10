@@ -16,5 +16,11 @@ class Register extends CI_Controller
 			view('auth.Register');
 	}
 
+	function add()
+	{
+		$data=$this->product_model->save_product();
+		echo json_encode($data);
+	}
+
 
 }
