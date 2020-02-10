@@ -5,7 +5,7 @@
         </div>
             <ul class="nav navbar-top-links navbar-right">
                 <li>
-                    <span class="m-r-sm text-muted welcome-message">Selamat datang {{$this->session->userdata('NAMA')}}</span>
+                    <span class="m-r-sm text-muted welcome-message">Selamat datang, {{$this->session->userdata('NAMA')}}.</span>
                 </li>
                 @if($this->session->userdata('login_status') == TRUE)
                 <li>
