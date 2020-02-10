@@ -63,11 +63,13 @@
          $status = [
             'type'=>'text',
             'id'=>'Status',
-            'name'=>'status',
-            'class'=>'form-control',
-            'placeholder'=>'Masukkan status..',
+            'class'=>'select2 form-control',
             'required'=>'required'
          ];
+         $options =[
+            'Kepala Badan' => 'Kepala Badan',
+            'Pemeriksa '=> 'Pemeriksa'
+          ];
         @endphp
         <div class="form-group">
             {{form_label('Jabatan')}}
@@ -97,7 +99,7 @@
         </div>
         <div class="form-group">
             {{form_label('Status Pejabat')}}
-            {{form_input($status)}}
+            {{form_dropdown('status', $options,'Pemeriksa',$status)}}
         </div>
             </div>
             <div class="modal-footer">
@@ -178,13 +180,14 @@
             'required'=>'required'
          ];
          $status = [
-            'type'=>'text',
             'id'=>'ubah-status',
-            'name'=>'ubah_status',
             'class'=>'form-control',
-            'placeholder'=>'Masukkan status..',
             'required'=>'required'
          ];
+         $options =[
+            'Kepala Badan' => 'Kepala Badan',
+            'Pemeriksa'=> 'Pemeriksa'
+          ];
         @endphp
         {{form_input($id_pejabat)}}
         <div class="form-group">
@@ -215,7 +218,7 @@
         </div>
         <div class="form-group">
             {{form_label('Status Pejabat')}}
-            {{form_input($status)}}
+            {{form_dropdown('ubah_status',$options,'',$status)}}
         </div>
             </div>
             <div class="modal-footer">

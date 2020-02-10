@@ -68,6 +68,19 @@
 @section('js')
 <script>
 $(document).ready(function() {
+
+    $('#Status').select2({
+            placeholder: "Pilih Status",
+            width: '100%',
+            dropdownParent: $('#modal-tambah')
+
+      });
+    $('#ubah-status').select2({
+            placeholder: "Pilih Status",
+            width: '100%',
+            dropdownParent: $('#modal-ubah')
+      });
+
       var table = $('#tabel-pejabat').DataTable({
            "processing":true,  
            "serverSide":true,  
@@ -169,7 +182,7 @@ $(document).ready(function() {
                         $('#ubah-nip').val(data.ubah_nip);
                         $('#ubah-dinas').val(data.ubah_dinas);
                         $('#ubah-provinsi').val(data.ubah_provinsi);
-                        $('#ubah-status').val(data.ubah_status);
+                        $('#ubah-status').val(data.ubah_status).trigger("change");
                     }
                 })
             });
