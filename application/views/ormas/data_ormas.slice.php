@@ -1,7 +1,5 @@
 @extends('base.main_base')
 @section('content')
-
-
 <!--  Isi Kontent -->
 <div class="wrapper wrapper-content animated fadeInRight">
             <div class="row">
@@ -479,6 +477,6 @@
             });
 
         });
-
     </script>
+
 @endsection
