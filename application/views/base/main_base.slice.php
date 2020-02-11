@@ -24,6 +24,8 @@
     <!-- Gritter -->
     <link href="{{site_url('assets/js/plugins/gritter/jquery.gritter.css')}}" rel="stylesheet">
 
+	<link href="{{site_url('assets/css/plugins/steps/jquery.steps.css')}}" rel="stylesheet">
+
     <link href="{{site_url('assets/css/animate.css')}}" rel="stylesheet">
     <link href="{{site_url('assets/css/style.css')}}" rel="stylesheet">
 
@@ -53,7 +55,7 @@
     <script src="{{site_url('assets/js/plugins/dataTables/dataTables.bootstrap4.min.js')}}"></script>
 
     <script src="{{site_url('assets/js/plugins/chosen/chosen.jquery.js')}}"></script>
-    <script src="{{site_url('assets/js/plugins/datapicker/bootstrap-datepicker.js')}}"></script>
+
 
      <!-- Select2 -->
      <script src="{{site_url('assets/js/plugins/select2/select2.full.min.js')}}"></script>
@@ -90,10 +92,8 @@
 
     <!-- Toastr -->
     <script src="{{site_url('assets/js/plugins/toastr/toastr.min.js')}}"></script>
-
-    <!-- Switchery  -->
-    <script src="{{site_url('assets/js/plugins/switchery/switchery.js')}}"></script>
-    
 @yield('js')
+
+
 </body>
 </html>
