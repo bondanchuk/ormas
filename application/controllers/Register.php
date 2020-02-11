@@ -22,6 +22,8 @@ class Register extends CI_Controller
 		$waktu_pendirian = date("Y-m-d", strtotime($this->input->post('tempat_pendirian')));
 		$tanggal_lahir_pendiri = date("Y-m-d", strtotime($this->input->post('tanggal_lahir')));
 		$tanggal_lahir_ketua = date("Y-m-d", strtotime($this->input->post('tanggallahir_ketua')));
+
+		$this->nama_ormas = $this->input->post('nama_ormas');
 		$register = array(
 		"tanggal_daftar"=>$tanggal_daftar,
 		"nama_ormas"=>$this->input->post('nama_ormas'),
@@ -67,9 +69,48 @@ class Register extends CI_Controller
 		"sumber_keuangan"=>$this->input->post('keuangan'),
 		"berbadan_hukum"=>$this->input->post('hukum'),
 		"usaha_ormas"=>$this->input->post('usaha'),
-	);
+		);
+
 		$data=$this->Model_register->addRegister($register);
+
+
 		echo json_encode($data);
+	}
+
+	function uploadFile()
+	{
+		$album = $this->input->post('nama_ormas');
+		$config['upload_path']          = './data-upload/'.$album;
+		$config['allowed_types']        = 'jpg|png|pdf';
+		$config['overwrite']			= true;
+		$config['max_size']             = 1024;
+		$config['encrypt_name'] = TRUE;
+
+
+		$this->load->library('upload', $config);
+
+
+		if (!is_dir('data-upload/' . $album)) {
+			mkdir('data-upload/' . $album, 0777, true);
+			for ($i = 1; $i <= 5; $i++) {
+				if (!empty($_FILES['verif' . $i]['name'])) {
+					if ($this->upload->do_upload('verif' . $i)) {
+						$data = array('upload_data' => $this->upload->data()); //ambil file name yang diupload
+
+						$judul = $this->input->post('nama_ormas'); //get judul image
+
+						$result = $this->Model_register->simpan_upload($judul);
+						echo json_decode($result);
+					} else {
+						$this->load->view('upload_form2');
+					}
+				}
+			}
+		}
+
+
+
+
 	}
 
 

@@ -184,7 +184,7 @@
 						'id'=>'nama-pendiri',
 						'name'=>'nama_pendiri',
 						'class'=>'form-control',
-						'require'=>'required'
+						'required'=>'required'
 						];
 
 						$NIK = [
@@ -671,71 +671,71 @@
 
 						$verif01 = [
 						'type'=>'file',
-						'id'=>'verif01',
-						'name'=>'verif01',
+						'id'=>'verif1',
+						'name'=>'verif1',
 						'class'=>'form-control',
 
 						];
 
 						$verif02 = [
 						'type'=>'file',
-						'id'=>'verif02',
-						'name'=>'verif02',
+						'id'=>'verif2',
+						'name'=>'verif2',
 						'class'=>'form-control',
 						];
 
 						$verif03 = [
 						'type'=>'file',
-						'id'=>'verif03',
-						'name'=>'verif03',
+						'id'=>'verif3',
+						'name'=>'verif3',
 						'class'=>'form-control',
 						'required'=>'required'
 						];
 
 						$verif04 = [
 						'type'=>'file',
-						'id'=>'verif04',
-						'name'=>'verif04',
+						'id'=>'verif4',
+						'name'=>'verif4',
 						'class'=>'form-control',
 						'required'=>'required'
 						];
 
 						$verif05 = [
 						'type'=>'file',
-						'id'=>'verif05',
-						'name'=>'verif05',
+						'id'=>'verif5',
+						'name'=>'verif5',
 						'class'=>'form-control',
 						'required'=>'required'
 						];
 
 						$verif06 = [
 						'type'=>'file',
-						'id'=>'verif06',
-						'name'=>'verif06',
+						'id'=>'verif6',
+						'name'=>'verif6',
 						'class'=>'form-control',
 						'required'=>'required'
 						];
 
 						$verif07 = [
 						'type'=>'file',
-						'id'=>'verif07',
-						'name'=>'verif07',
+						'id'=>'verif7',
+						'name'=>'verif7',
 						'class'=>'form-control',
 						'required'=>'required'
 						];
 
 						$verif08 = [
 						'type'=>'file',
-						'id'=>'verif08',
-						'name'=>'verif08',
+						'id'=>'verif8',
+						'name'=>'verif8',
 						'class'=>'form-control',
 						'required'=>'required'
 						];
 
 						$verif09 = [
 						'type'=>'file',
-						'id'=>'verif09',
-						'name'=>'verif09',
+						'id'=>'verif9',
+						'name'=>'verif9',
 						'class'=>'form-control',
 						'required'=>'required'
 						];
@@ -989,10 +989,21 @@
 					dataType : "json",
 					data : $("#form").serialize(),
 					success: function(data){
-						swal({
-							title: "Terimakasih!",
-							text: "Pendaftaran Ormas Telah Berhasil",
-							type: "success"
+						$.ajax({
+							url:"{{base_url('Register/uploadFile')}}",
+							type:"post",
+							data:new FormData(this),
+							processData:false,
+							contentType:false,
+							cache:false,
+							async:false,
+							success: function(data){
+								swal({
+									title: "Terimakasih!",
+									text: "Pendaftaran Ormas Telah Berhasil",
+									type: "success"
+								});
+							}
 						});
 					},
 					error : function (jqXHR, textStatus, errorThrown) {
@@ -1003,6 +1014,9 @@
 						});
 					}
 				});
+
+
+
 			}
 		}).validate({
 			errorPlacement: function (error, element)
