@@ -26,6 +26,9 @@
 
 	<link href="{{site_url('assets/css/plugins/steps/jquery.steps.css')}}" rel="stylesheet">
 
+	<!-- Sweet Alert -->
+	<link href="{{site_url('assets/css/plugins/sweetalert/sweetalert.css')}}" rel="stylesheet">
+
     <link href="{{site_url('assets/css/animate.css')}}" rel="stylesheet">
     <link href="{{site_url('assets/css/style.css')}}" rel="stylesheet">
 
@@ -102,6 +105,9 @@
 
 	<!-- Jquery Date Picker -->
 	<script src="{{site_url('assets/js/plugins/datapicker/bootstrap-datepicker.js')}}"></script>
+
+	<!-- Sweet alert -->
+	<script src="{{site_url('assets/js/plugins/sweetalert/sweetalert.min.js')}}"></script>
 
 @yield('js')
 
