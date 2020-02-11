@@ -184,7 +184,7 @@
 						'id'=>'nama-pendiri',
 						'name'=>'nama_pendiri',
 						'class'=>'form-control',
-						'required'=>'required'
+						'require'=>'required'
 						];
 
 						$NIK = [
@@ -195,12 +195,13 @@
 						'required'=>'required'
 						];
 
-						$agamaKetua = [
-						'id'=>'agama-ketua',
+						$agamaPendiri = [
+						'id'=>'agama-pendiri',
+						'name'=>'agama_pendiri',
 						'class'=>'form-control',
 						'required'=>'required'
 						];
-						$optionsAgamaKetua =[
+						$optionsAgamaPendiri =[
 						'Islam' => 'Islam',
 						'Kristen'=> 'Kristen',
 						'Katolik'=> 'Katolik',
@@ -211,6 +212,7 @@
 
 						$kewarganegaraan = [
 						'id'=>'kewarganegaraan',
+						'name'=>'kewarganegaraan',
 						'class'=>'form-control',
 						'required'=>'required'
 						];
@@ -255,6 +257,7 @@
 
 						$statusPKW = [
 						'id'=>'status-pkw',
+						'id'=>'status_pkw',
 						'class'=>'form-control',
 						'required'=>'required'
 						];
@@ -299,7 +302,7 @@
 								<div class="col-lg-6">
 									<div class="form-group">
 										{{form_label('Agama*')}}
-										{{form_dropdown('agama-pendiri', $optionsAgamaKetua, '', $agamaKetua)}}
+										{{form_dropdown('agama-pendiri', $optionsAgamaPendiri, '', $agamaPendiri)}}
 									</div>
 									<div class="form-group">
 										{{form_label('Kewarganegaraan*')}}
@@ -382,6 +385,7 @@
 
 						$agamaKetua = [
 						'id'=>'agama-ketua',
+						'id'=>'agama_ketua',
 						'class'=>'form-control',
 						'required'=>'required'
 						];
@@ -397,6 +401,7 @@
 
 						$kwKetua = [
 						'id'=>'kw-ketua',
+						'id'=>'kw_ketua',
 						'class'=>'form-control',
 						'required'=>'required'
 						];
@@ -425,6 +430,7 @@
 
 						$statusPKWKetua = [
 						'id'=>'status-pkw-ketua',
+						'id'=>'status_pkw_ketua',
 						'class'=>'form-control',
 						'required'=>'required'
 						];
@@ -432,6 +438,20 @@
 						'Kawin' => 'Kawin',
 						'Belum Kawin'=> 'Belum Kawin'
 						];
+
+						$jenisKelaminKetua = [
+						'id'=>'jenis-kelamin-ketua',
+						'id'=>'jenis_kelamin_ketua',
+						'class'=>'form-control',
+						'required'=>'required'
+						];
+						$optionsJkKetua =[
+						'Pria' => 'Pria',
+						'Wanita'=> 'Wanita'
+						];
+
+
+
 
 						$alamatKetua = [
 						'type'=>'text',
@@ -498,6 +518,7 @@
 
 						$keuangan = [
 						'id'=>'keuangan',
+						'name'=>'keuangan',
 						'class'=>'form-control',
 						'required'=>'required'
 						];
@@ -509,6 +530,7 @@
 
 						$hukum = [
 						'id'=>'hukum',
+						'name'=>'hukum',
 						'class'=>'form-control',
 						'required'=>'required'
 						];
@@ -563,6 +585,17 @@
 								</div>
 								<div class="col-lg-6">
 									<div class="form-group">
+										{{form_label('Jenis Kelamin*')}}
+										{{form_dropdown('jenis-kelamin-ketua', $optionsJkKetua, '', $jenisKelaminKetua)}}
+									</div>
+									<div class="form-group">
+										{{form_label('Status Perkawinan*')}}
+										{{form_dropdown('status-pkw-ketua', $optionsPkwKetua, '', $statusPKWKetua)}}
+									</div>
+								</div>
+
+								<div class="col-lg-6">
+									<div class="form-group">
 										{{form_label('Tempat lahir*')}}
 										{{form_input($tlKetua)}}
 									</div>
@@ -576,8 +609,8 @@
 								</div>
 								<div class="col-lg-6">
 									<div class="form-group">
-										{{form_label('Status Perkawinan*')}}
-										{{form_dropdown('status-pkw-ketua', $optionsPkwKetua, '', $statusPKWKetua)}}
+										{{form_label('No. Telp.*')}}
+										{{form_input($noTelpKetua)}}
 									</div>
 									<div class="form-group">
 										{{form_label('Alamat*')}}
@@ -586,8 +619,8 @@
 								</div>
 								<div class="col-lg-6">
 									<div class="form-group">
-										{{form_label('No. Telp.*')}}
-										{{form_input($noTelpKetua)}}
+										{{form_label('Nama Bendahara*')}}
+										{{form_input($bendahara)}}
 									</div>
 									<div class="form-group">
 										{{form_label('Nama Sekretaris*')}}
@@ -596,8 +629,8 @@
 								</div>
 								<div class="col-lg-6">
 									<div class="form-group">
-										{{form_label('Nama Bendahara*')}}
-										{{form_input($bendahara)}}
+										{{form_label('Keputusan Tertinggi Ormas*')}}
+										{{form_input($keputusan)}}
 									</div>
 									<div class="form-group">
 										{{form_label('Masa Bakti Kepengurusan*')}}
@@ -606,8 +639,8 @@
 								</div>
 								<div class="col-lg-6">
 									<div class="form-group">
-										{{form_label('Keputusan Tertinggi Ormas*')}}
-										{{form_input($keputusan)}}
+										{{form_label('NPWP*')}}
+										{{form_input($npwp)}}
 									</div>
 									<div class="form-group">
 										{{form_label('Cabang*')}}
@@ -616,8 +649,8 @@
 								</div>
 								<div class="col-lg-6">
 									<div class="form-group">
-										{{form_label('NPWP*')}}
-										{{form_input($npwp)}}
+										{{form_label('Berbadan Hukum*')}}
+										{{form_dropdown('hukum', $optionsHukum, '', $hukum)}}
 									</div>
 									<div class="form-group">
 										{{form_label('Sumber Keuangan*')}}
@@ -625,10 +658,7 @@
 									</div>
 								</div>
 								<div class="col-lg-6">
-									<div class="form-group">
-										{{form_label('Berbadan Hukum*')}}
-										{{form_dropdown('hukum', $optionsHukum, '', $hukum)}}
-									</div>
+
 									<div class="form-group">
 										{{form_label('Usaha Ormas*')}}
 										{{form_input($usaha)}}
@@ -644,7 +674,7 @@
 						'id'=>'verif01',
 						'name'=>'verif01',
 						'class'=>'form-control',
-						'required'=>'required'
+
 						];
 
 						$verif02 = [
@@ -652,7 +682,6 @@
 						'id'=>'verif02',
 						'name'=>'verif02',
 						'class'=>'form-control',
-						'required'=>'required'
 						];
 
 						$verif03 = [
@@ -862,16 +891,6 @@
 								</div>
 								<div class="col-lg-6">
 									<div class="form-group">
-										{{form_label('File Surat Pernyataan*')}}
-										{{form_input($verif15)}}
-									</div>
-									<div class="form-group">
-										{{form_label('File Daftar Isian*')}}
-										{{form_input($verif16)}}
-									</div>
-								</div>
-								<div class="col-lg-6">
-									<div class="form-group">
 										{{form_label('File Surat Keabsahan*')}}
 										{{form_input($verif17)}}
 									</div>
@@ -880,6 +899,13 @@
 										{{form_input($verif18)}}
 									</div>
 								</div>
+								<div class="col-lg-6">
+									<div class="form-group">
+										{{form_label('File Daftar Isian*')}}
+										{{form_input($verif16)}}
+									</div>
+								</div>
+
 							</div>
 						</fieldset>
 					{{form_close()}}
@@ -956,10 +982,27 @@
 			},
 			onFinished: function (event, currentIndex)
 			{
-				var form = $(this);
 
-				// Submit form input
-				form.submit();
+				$.ajax({
+					type : "POST",
+					url  : "{{base_url('Register/add')}}",
+					dataType : "json",
+					data : $("#form").serialize(),
+					success: function(data){
+						swal({
+							title: "Terimakasih!",
+							text: "Pendaftaran Ormas Telah Berhasil",
+							type: "success"
+						});
+					},
+					error : function (jqXHR, textStatus, errorThrown) {
+						swal({
+							title: "Gagal!",
+							text: "Pendaftaran Ormas Gagal",
+							type: "danger"
+						});
+					}
+				});
 			}
 		}).validate({
 			errorPlacement: function (error, element)
@@ -974,7 +1017,6 @@
 		});
 
 		$('#data_1 .input-group.date').datepicker({
-			"setDate" : new Date(),
 			todayBtn: "linked",
 			keyboardNavigation: false,
 			forceParse: false,
@@ -983,7 +1025,6 @@
 		});
 
 		$('#data_2 .input-group.date').datepicker({
-			"setDate" : new Date(),
 			todayBtn: "linked",
 			keyboardNavigation: false,
 			forceParse: false,
@@ -992,7 +1033,6 @@
 		});
 
 		$('#data_3 .input-group.date').datepicker({
-			"setDate" : new Date(),
 			todayBtn: "linked",
 			keyboardNavigation: false,
 			forceParse: false,
@@ -1001,13 +1041,17 @@
 		});
 
 		$('#data_4 .input-group.date').datepicker({
-			"setDate" : new Date(),
 			todayBtn: "linked",
 			keyboardNavigation: false,
 			forceParse: false,
 			calendarWeeks: true,
 			autoclose: true
+
+
 		});
+
+
+
 
 		$("#waktu-pendirian").datepicker().datepicker("setDate", new Date());
 		$("#tanggal-daftar").datepicker().datepicker("setDate", new Date());
