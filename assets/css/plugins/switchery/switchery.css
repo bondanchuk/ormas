@@ -6,7 +6,8 @@
  */
 
 .switchery {
-    background-color: #fff;
+    color: #c00 !important;
+    background-color: #c00 !important;
     border: 1px solid #dfdfdf;
     border-radius: 20px;
     cursor: pointer;
@@ -15,13 +16,12 @@
     position: relative;
     vertical-align: middle;
     width: 50px;
-
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
     box-sizing: content-box;
 }
 
-.switchery > small {
+.switchery>small {
     background: #fff;
     border-radius: 100%;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
