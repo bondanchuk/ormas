@@ -20,6 +20,7 @@
             <div class="ibox ">
                 <div class="ibox-title">
                     <h5>Verifikasi Data - [name]</h5> <!-- Urgent! Change name into ORMAS name -->
+                    <a href="#" class="btn btn-primary" target="_blank">Submit Verifikasi</a>
                 </div>
                 <div class="ibox-content">
                     <div class="tabs-container">
@@ -939,13 +940,206 @@
                     <!-- Tab #4  -->
                         <div role="tabpanel" id="tab-4" class="tab-pane">
                             <div class="panel-body">
-                                <strong>MUHMUH</strong>
+                                <div class="col-12 form-group">
+                                    <div class="row">
+                                        <div class="col-9 col-md-10 col-lg-10 form-control">
+                                            {{form_label('Surat Permohonan')}}<br>
+                                            <a href="#" class="btn btn-primary" target="_blank">Lihat File</a>
+                                        </div>
+                                        <div class="col-3 col-lg-2 text-center">
+                                            <label class='form-control-plaintext'>Verifikasi</label>
+                                            <input type="checkbox" class="js-switch" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 form-group">
+                                    <div class="row">
+                                        <div class="col-9 col-md-10 col-lg-10 form-control">
+                                            {{form_label('Lambang Ormas')}}<br>
+                                            <a href="#" class="btn btn-primary" target="_blank">Lihat File</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 form-group">
+                                    <div class="row">
+                                        <div class="col-9 col-md-10 col-lg-10 form-control">
+                                            {{form_label('Bendera Ormas')}}<br>
+                                            <a href="#" class="btn btn-primary" target="_blank">Lihat File</a>
+                                        </div>
+                                    </div>
+                                </div>   
+                                <div class="col-12 form-group">
+                                    <div class="row">
+                                        <div class="col-9 col-md-10 col-lg-10 form-control">
+                                            {{form_label('Akta')}}<br>
+                                            <a href="#" class="btn btn-primary" target="_blank">Lihat File</a>
+                                        </div>
+                                        <div class="col-3 col-lg-2 text-center">
+                                            <label class='form-control-plaintext'>Verifikasi</label>
+                                            <input type="checkbox" class="js-switch" />
+                                        </div>
+                                    </div>
+                                </div>   
+                                <div class="col-12 form-group">
+                                    <div class="row">
+                                        <div class="col-9 col-md-10 col-lg-10 form-control">
+                                            {{form_label('AD ART')}}<br>
+                                            <a href="#" class="btn btn-primary" target="_blank">Lihat File</a>
+                                        </div>
+                                        <div class="col-3 col-lg-2 text-center">
+                                            <label class='form-control-plaintext'>Verifikasi</label>
+                                            <input type="checkbox" class="js-switch" />
+                                        </div>
+                                    </div>
+                                </div>   
+                                <div class="col-12 form-group">
+                                    <div class="row">
+                                        <div class="col-9 col-md-10 col-lg-10 form-control">
+                                            {{form_label('SK Pengurus')}}<br>
+                                            <a href="#" class="btn btn-primary" target="_blank">Lihat File</a>
+                                        </div>
+                                        <div class="col-3 col-lg-2 text-center">
+                                            <label class='form-control-plaintext'>Verifikasi</label>
+                                            <input type="checkbox" class="js-switch" />
+                                        </div>
+                                    </div>
+                                </div>  
+                                <div class="col-12 form-group">
+                                    <div class="row">
+                                        <div class="col-9 col-md-10 col-lg-10 form-control">
+                                            {{form_label('Program Ormas')}}<br>
+                                            <a href="#" class="btn btn-primary" target="_blank">Lihat File</a>
+                                        </div>
+                                        <div class="col-3 col-lg-2 text-center">
+                                            <label class='form-control-plaintext'>Verifikasi</label>
+                                            <input type="checkbox" class="js-switch" />
+                                        </div>
+                                    </div>
+                                </div>    
+                                <div class="col-12 form-group">
+                                    <div class="row">
+                                        <div class="col-9 col-md-10 col-lg-10 form-control">
+                                            {{form_label('SK Domisili')}}<br>
+                                            <a href="#" class="btn btn-primary" target="_blank">Lihat File</a>
+                                        </div>
+                                        <div class="col-3 col-lg-2 text-center">
+                                            <label class='form-control-plaintext'>Verifikasi</label>
+                                            <input type="checkbox" class="js-switch" />
+                                        </div>
+                                    </div>
+                                </div>   
+                                <div class="col-12 form-group">
+                                    <div class="row">
+                                        <div class="col-9 col-md-10 col-lg-10 form-control">
+                                            {{form_label('Fotocopy KTP Ketua')}}<br>
+                                            <a href="#" class="btn btn-primary" target="_blank">Lihat File</a>
+                                        </div>
+                                        <div class="col-3 col-lg-2 text-center">
+                                            <label class='form-control-plaintext'>Verifikasi</label>
+                                            <input type="checkbox" class="js-switch" />
+                                        </div>
+                                    </div>
+                                </div>   
+                                <div class="col-12 form-group">
+                                    <div class="row">
+                                        <div class="col-9 col-md-10 col-lg-10 form-control">
+                                            {{form_label('Fotocopy KTP Sekretaris')}}<br>
+                                            <a href="#" class="btn btn-primary" target="_blank">Lihat File</a>
+                                        </div>
+                                        <div class="col-3 col-lg-2 text-center">
+                                            <label class='form-control-plaintext'>Verifikasi</label>
+                                            <input type="checkbox" class="js-switch" />
+                                        </div>
+                                    </div>
+                                </div>   
+                                <div class="col-12 form-group">
+                                    <div class="row">
+                                        <div class="col-9 col-md-10 col-lg-10 form-control">
+                                            {{form_label('Fotocpy KTP Bendahara')}}<br>
+                                            <a href="#" class="btn btn-primary" target="_blank">Lihat File</a>
+                                        </div>
+                                        <div class="col-3 col-lg-2 text-center">
+                                            <label class='form-control-plaintext'>Verifikasi</label>
+                                            <input type="checkbox" class="js-switch" />
+                                        </div>
+                                    </div>
+                                </div>   
+                                <div class="col-12 form-group">
+                                    <div class="row">
+                                        <div class="col-9 col-md-10 col-lg-10 form-control">
+                                            {{form_label('NPWP')}}<br>
+                                            <a href="#" class="btn btn-primary" target="_blank">Lihat File</a>
+                                        </div>
+                                        <div class="col-3 col-lg-2 text-center">
+                                            <label class='form-control-plaintext'>Verifikasi</label>
+                                            <input type="checkbox" class="js-switch" />
+                                        </div>
+                                    </div>
+                                </div>   
+                                <div class="col-12 form-group">
+                                    <div class="row">
+                                        <div class="col-9 col-md-10 col-lg-10 form-control">
+                                            {{form_label('Foto Sekretariat')}}<br>
+                                            <a href="#" class="btn btn-primary" target="_blank">Lihat File</a>
+                                        </div>
+                                        <div class="col-3 col-lg-2 text-center">
+                                            <label class='form-control-plaintext'>Verifikasi</label>
+                                            <input type="checkbox" class="js-switch" />
+                                        </div>
+                                    </div>
+                                </div>   
+                                <div class="col-12 form-group">
+                                    <div class="row">
+                                        <div class="col-9 col-md-10 col-lg-10 form-control">
+                                            {{form_label('Surat Keabsahan')}}<br>
+                                            <a href="#" class="btn btn-primary" target="_blank">Lihat File</a>
+                                        </div>
+                                        <div class="col-3 col-lg-2 text-center">
+                                            <label class='form-control-plaintext'>Verifikasi</label>
+                                            <input type="checkbox" class="js-switch" />
+                                        </div>
+                                    </div>
+                                </div> 
+                                <div class="col-12 form-group">
+                                    <div class="row">
+                                        <div class="col-9 col-md-10 col-lg-10 form-control">
+                                            {{form_label('Surat Pernyataan')}}<br>
+                                            <a href="#" class="btn btn-primary" target="_blank">Lihat File</a>
+                                        </div>
+                                        <div class="col-3 col-lg-2 text-center">
+                                            <label class='form-control-plaintext'>Verifikasi</label>
+                                            <input type="checkbox" class="js-switch" />
+                                        </div>
+                                    </div>
+                                </div>   
+                                <div class="col-12 form-group">
+                                    <div class="row">
+                                        <div class="col-9 col-md-10 col-lg-10 form-control">
+                                            {{form_label('SKT')}}<br>
+                                            <a href="#" class="btn btn-primary" target="_blank">Lihat File</a>
+                                        </div>
+                                        <div class="col-3 col-lg-2 text-center">
+                                            <label class='form-control-plaintext'>Verifikasi</label>
+                                            <input type="checkbox" class="js-switch" />
+                                        </div>
+                                    </div>
+                                </div>   
+                                <div class="col-12 form-group">
+                                    <div class="row">
+                                        <div class="col-9 col-md-10 col-lg-10 form-control">
+                                            {{form_label('Daftar Isian')}}<br>
+                                            <a href="#" class="btn btn-primary" target="_blank">Lihat File</a>
+                                        </div>
+                                        <div class="col-3 col-lg-2 text-center">
+                                            <label class='form-control-plaintext'>Verifikasi</label>
+                                            <input type="checkbox" class="js-switch" />
+                                        </div>
+                                    </div>
+                                </div>     
 
-                                <p>Thousand unknown plants are noticed by me: when I hear the buzz of the little world among the stalks, and grow familiar with the countless indescribable forms of the insects
-                                    and flies, then I feel the presence of the Almighty, who formed us in his own image, and the breath </p>
 
-                                <p>I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite
-                                    sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment; and yet.</p>
+
+
                             </div>
                         </div>
                     </div>
