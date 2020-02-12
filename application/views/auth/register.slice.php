@@ -10,6 +10,7 @@
 					<h5>Pendaftaran</h5>
 				</div>
 				<div class="ibox-content">
+			<!-- Field Data Ormas -->
 					<h2>
 						Form Pendaftaran Ormas
 					</h2>
@@ -116,8 +117,6 @@
 								'rows' => '5'
 								];
 								@endphp
-
-
 								<div class="form-group" id="data_2">
 									{{form_label('Tanggal Daftar*')}}
 									<div class="input-group date">
@@ -177,7 +176,8 @@
 							</div>
 						</div>
 					</fieldset>
-
+			<!-- Field Data Ormas End  -->			
+			<!-- Field Data Pendiri -->
 					@php
 					$namaPendiri = [
 					'type'=>'text',
@@ -350,7 +350,8 @@
 							</div>
 						</div>
 					</fieldset>
-
+			<!-- Field Data Pendiri End  -->
+			<!-- Field Data Ketua  -->
 					@php
 
 					$namaPembina = [
@@ -449,9 +450,6 @@
 					'Pria' => 'Pria',
 					'Wanita'=> 'Wanita'
 					];
-
-
-
 
 					$alamatKetua = [
 					'type'=>'text',
@@ -666,7 +664,8 @@
 							</div>
 						</div>
 					</fieldset>
-
+			<!-- Field Data Ketua End  -->
+			<!-- Field data file  -->
 					@php
 
 					$verif01 = [
@@ -821,9 +820,6 @@
 					'accept' => 'application/pdf'
 					];
 
-
-
-
 					@endphp
 					<h1>Upload File</h1>
 					<fieldset>
@@ -831,93 +827,93 @@
 						<div class="row">
 							<div class="col-lg-6">
 								<div class="form-group">
-									{{form_label('File Lambang')}}
+									{{form_label('File Lambang | PDF Max 1mb')}}
 									{{form_input($verif01)}}
 								</div>
 								<div class="form-group">
-									{{form_label('File Bendera Ormas')}}
+									{{form_label('File Bendera Ormas | PDF Max 1mb')}}
 									{{form_input($verif02)}}
 								</div>
 							</div>
 							<div class="col-lg-6">
 								<div class="form-group">
-									{{form_label('File Surat Permohonan*')}}
+									{{form_label('File Surat Permohonan* | PDF Max 1mb')}}
 									{{form_input($verif03)}}
 								</div>
 								<div class="form-group">
-									{{form_label('File Akta*')}}
+									{{form_label('File Akta* | PDF Max 1mb')}}
 									{{form_input($verif04)}}
 								</div>
 							</div>
 							<div class="col-lg-6">
 								<div class="form-group">
-									{{form_label('File AD ART*')}}
+									{{form_label('File AD ART* | PDF Max 1mb')}}
 									{{form_input($verif05)}}
 								</div>
 								<div class="form-group">
-									{{form_label('File Program Ormas*')}}
+									{{form_label('File Program Ormas* | PDF Max 1mb')}}
 									{{form_input($verif06)}}
 								</div>
 							</div>
 							<div class="col-lg-6">
 								<div class="form-group">
-									{{form_label('File SK Pengurus*')}}
+									{{form_label('File SK Pengurus* | PDF Max 1mb')}}
 									{{form_input($verif07)}}
 								</div>
 								<div class="form-group">
-									{{form_label('File Fotocopy KTP Ketua*')}}
+									{{form_label('File Fotocopy KTP Ketua* | PDF Max 1mb')}}
 									{{form_input($verif08)}}
 								</div>
 							</div>
 							<div class="col-lg-6">
 								<div class="form-group">
-									{{form_label('File Fotocopy KTP Sekretaris*')}}
+									{{form_label('File Fotocopy KTP Sekretaris* | PDF Max 1mb')}}
 									{{form_input($verif09)}}
 								</div>
 								<div class="form-group">
-									{{form_label('File Fotocopy KTP Bendahara*')}}
+									{{form_label('File Fotocopy KTP Bendahara* | PDF Max 1mb')}}
 									{{form_input($verif10)}}
 								</div>
 							</div>
 							<div class="col-lg-6">
 								<div class="form-group">
-									{{form_label('File SK Domisili*')}}
+									{{form_label('File SK Domisili* | PDF Max 1mb')}}
 									{{form_input($verif11)}}
 								</div>
 								<div class="form-group">
-									{{form_label('File NPWP*')}}
+									{{form_label('File NPWP* | PDF Max 1mb')}}
 									{{form_input($verif12)}}
 								</div>
 							</div>
 							<div class="col-lg-6">
 								<div class="form-group">
-									{{form_label('File Foto Sekretariat*')}}
+									{{form_label('File Foto Sekretariat* | PDF Max 1mb')}}
 									{{form_input($verif13)}}
 								</div>
 								<div class="form-group">
-									{{form_label('File Surat Pernyataan*')}}
+									{{form_label('File Surat Pernyataan* | PDF Max 1mb')}}
 									{{form_input($verif14)}}
 								</div>
 							</div>
 							<div class="col-lg-6">
 								<div class="form-group">
-									{{form_label('File Surat Keabsahan*')}}
+									{{form_label('File Surat Keabsahan* | PDF Max 1mb')}}
 									{{form_input($verif16)}}
 								</div>
 								<div class="form-group">
-									{{form_label('File SKT*')}}
+									{{form_label('File SKT* | PDF Max 1mb')}}
 									{{form_input($verif17)}}
 								</div>
 							</div>
 							<div class="col-lg-6">
 								<div class="form-group">
-									{{form_label('File Daftar Isian*')}}
+									{{form_label('File Daftar Isian* | PDF Max 1mb')}}
 									{{form_input($verif15)}}
 								</div>
 							</div>
-
 						</div>
 					</fieldset>
+			<!-- Field data file end  -->
 					{{form_close()}}
 				</div>
 			</div>
