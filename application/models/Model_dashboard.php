@@ -3,26 +3,66 @@
 class Model_dashboard extends CI_Model{
 
 	var $table = "tb_dataormas";
-	var $select_column = array("id_ormas", "tanggal_daftar", "nama_ormas", "alamat_kantor", "cabang","cabang");
-	var $order_column = array(null, "id_ormas", "tanggal_daftar", "nama_ormas", "alamat_kantor", "cabang", "cabang", null);
+	var $column = array("tb_dataormas.id_ormas", "tanggal_daftar", "nama_ormas", "alamat_kantor", "cabang","id_verifikasi");
+	var $order = array(null, "tb_dataormas.id_ormas", "tanggal_daftar", "nama_ormas", "alamat_kantor", "cabang", "cabang", null);
 	function make_query()
 	{
-		$this->db->select($this->select_column);
+		$array = array(
+			'verif01' => '1',
+			'verif02' => '1',
+			'verif03' => '1',
+			'verif04' => '1',
+			'verif05' => '1',
+			'verif06' => '1',
+			'verif07' => '1',
+			'verif08' => '1',
+			'verif09' => '1',
+			'verif10' => '1',
+			'verif11' => '1',
+			'verif12' => '1',
+			'verif13' => '1',
+			'verif14' => '1',
+			'verif15' => '1',
+			'verif16' => '1',
+			'verif17' => '1',
+		);
+		$this->db->select($this->column);
 		$this->db->from($this->table);
-		if(isset($_POST["search"]["value"]))
+		$this->db->join('tb_verifikasi', 'tb_dataormas.id_ormas=tb_verifikasi.id_ormas');
+		$this->db->where($array);
+
+		$i = 0;
+
+		foreach ($this->column as $item) // loop column
 		{
-			$this->db->like("tanggal_daftar", $_POST["search"]["value"]);
-			$this->db->or_like("nama_ormas", $_POST["search"]["value"]);
-			$this->db->or_like("alamat_kantor", $_POST["search"]["value"]);
-			$this->db->or_like("cabang", $_POST["search"]["value"]);
+			if($_POST['search']['value']) // if datatable send POST for search
+			{
+
+				if($i===0) // first loop
+				{
+					$this->db->group_start(); // open bracket. query Where with OR clause better with bracket. because maybe can combine with other WHERE with AND.
+					$this->db->like($item, $_POST['search']['value']);
+				}
+				else
+				{
+					$this->db->or_like($item, $_POST['search']['value']);
+				}
+
+				if(count($this->column) - 1 == $i) //last loop
+					$this->db->group_end(); //close bracket
+			}
+			$column[$i] = $item; // set column array variable to order processing
+			$i++;
 		}
-		if(isset($_POST["order"]))
+
+		if(isset($_POST['order'])) // here order processing
 		{
-			$this->db->order_by($this->order_column[$_POST['order']['0']['column']], $_POST['order']['0']['dir']);
+			$this->db->order_by($column[$_POST['order']['0']['column']], $_POST['order']['0']['dir']);
 		}
-		else
+		else if(isset($this->order))
 		{
-			$this->db->order_by('id_ormas', 'ASC');
+			$order = $this->order;
+			$this->db->order_by(key($order), $order[key($order)]);
 		}
 	}
 	function make_datatables(){

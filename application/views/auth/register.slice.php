@@ -674,6 +674,7 @@
 					'id'=>'verif1',
 					'name'=>'verif1',
 					'class'=>'form-control',
+					'accept' => 'application/pdf'
 
 					];
 
@@ -682,6 +683,7 @@
 					'id'=>'verif2',
 					'name'=>'verif2',
 					'class'=>'form-control',
+					'accept' => 'application/pdf'
 					];
 
 					$verif03 = [
@@ -689,7 +691,8 @@
 					'id'=>'verif3',
 					'name'=>'verif3',
 					'class'=>'form-control',
-					'required'=>'required'
+					'required'=>'required',
+					'accept' => 'application/pdf'
 					];
 
 					$verif04 = [
@@ -697,7 +700,8 @@
 					'id'=>'verif4',
 					'name'=>'verif4',
 					'class'=>'form-control',
-					'required'=>'required'
+					'required'=>'required',
+					'accept' => 'application/pdf'
 					];
 
 					$verif05 = [
@@ -705,7 +709,8 @@
 					'id'=>'verif5',
 					'name'=>'verif5',
 					'class'=>'form-control',
-					'required'=>'required'
+					'required'=>'required',
+					'accept' => 'application/pdf'
 					];
 
 					$verif06 = [
@@ -713,7 +718,8 @@
 					'id'=>'verif6',
 					'name'=>'verif6',
 					'class'=>'form-control',
-					'required'=>'required'
+					'required'=>'required',
+					'accept' => 'application/pdf'
 					];
 
 					$verif07 = [
@@ -721,7 +727,8 @@
 					'id'=>'verif7',
 					'name'=>'verif7',
 					'class'=>'form-control',
-					'required'=>'required'
+					'required'=>'required',
+					'accept' => 'application/pdf'
 					];
 
 					$verif08 = [
@@ -729,7 +736,8 @@
 					'id'=>'verif8',
 					'name'=>'verif8',
 					'class'=>'form-control',
-					'required'=>'required'
+					'required'=>'required',
+					'accept' => 'application/pdf'
 					];
 
 					$verif09 = [
@@ -737,7 +745,8 @@
 					'id'=>'verif9',
 					'name'=>'verif9',
 					'class'=>'form-control',
-					'required'=>'required'
+					'required'=>'required',
+					'accept' => 'application/pdf'
 					];
 
 					$verif10 = [
@@ -745,7 +754,8 @@
 					'id'=>'verif10',
 					'name'=>'verif10',
 					'class'=>'form-control',
-					'required'=>'required'
+					'required'=>'required',
+					'accept' => 'application/pdf'
 					];
 
 					$verif11 = [
@@ -753,7 +763,8 @@
 					'id'=>'verif11',
 					'name'=>'verif11',
 					'class'=>'form-control',
-					'required'=>'required'
+					'required'=>'required',
+					'accept' => 'application/pdf'
 					];
 
 					$verif12 = [
@@ -761,7 +772,8 @@
 					'id'=>'verif12',
 					'name'=>'verif12',
 					'class'=>'form-control',
-					'required'=>'required'
+					'required'=>'required',
+					'accept' => 'application/pdf'
 					];
 
 					$verif13 = [
@@ -769,7 +781,8 @@
 					'id'=>'verif13',
 					'name'=>'verif13',
 					'class'=>'form-control',
-					'required'=>'required'
+					'required'=>'required',
+					'accept' => 'application/pdf'
 					];
 
 					$verif14 = [
@@ -777,7 +790,8 @@
 					'id'=>'verif14',
 					'name'=>'verif14',
 					'class'=>'form-control',
-					'required'=>'required'
+					'required'=>'required',
+					'accept' => 'application/pdf'
 					];
 
 					$verif15 = [
@@ -785,7 +799,8 @@
 					'id'=>'verif15',
 					'name'=>'verif15',
 					'class'=>'form-control',
-					'required'=>'required'
+					'required'=>'required',
+					'accept' => 'application/pdf'
 					];
 
 					$verif16 = [
@@ -793,7 +808,8 @@
 					'id'=>'verif16',
 					'name'=>'verif16',
 					'class'=>'form-control',
-					'required'=>'required'
+					'required'=>'required',
+					'accept' => 'application/pdf'
 					];
 
 					$verif17 = [
@@ -801,7 +817,8 @@
 					'id'=>'verif17',
 					'name'=>'verif17',
 					'class'=>'form-control',
-					'required'=>'required'
+					'required'=>'required',
+					'accept' => 'application/pdf'
 					];
 
 

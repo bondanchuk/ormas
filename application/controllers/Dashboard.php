@@ -24,8 +24,7 @@ class Dashboard extends CI_Controller
 			$sub_array[] = $row->nama_ormas;
 			$sub_array[] = $row->alamat_kantor;
 			$sub_array[] = $row->cabang;
-			$sub_array[] = $row->cabang;
-			$sub_array[] = '<div class="btn-group"><button type="button" name="ubah" data-kode="'.$row->id_ormas.'" class="ubah_record btn btn-warning btn-xs">Lihat</button></div>';
+			$sub_array[] = '<div class="btn-group"><button type="button" name="ubah" data-kode="'.$row->id_ormas.'" class="lihat_record btn btn-warning btn-xs">Lihat</button></div>';
 			$data[] = $sub_array;
 		}
 		$output = array(
@@ -34,6 +33,25 @@ class Dashboard extends CI_Controller
 			"recordsFiltered"     	 =>     $this->model_dashboard->get_filtered_data(),
 			"data"                  =>     $data
 		);
+		echo json_encode($output);
+	}
+
+
+	function get_detail()
+	{
+		$output = array();
+		$data = $this->model_dashboard->get_detail_model($this->input->post('id_pejabat'));
+		foreach($data as $row)
+		{
+			$output['ubah_id_pejabat'] = $row->id_ormas;
+			$output['ubah_jabatan'] = $row->Jabatan;
+			$output['ubah_nama'] = $row->Nama;
+			$output['ubah_pangkat'] = $row->Pangkat;
+			$output['ubah_nip'] = $row->NIP;
+			$output['ubah_dinas'] = $row->Dinas;
+			$output['ubah_provinsi'] = $row->Provinsi;
+			$output['ubah_status'] = $row->Status;
+		}
 		echo json_encode($output);
 	}
 }
