@@ -6,14 +6,12 @@ class Model_register extends CI_Model{
 	{
 
 		$result=$this->db->insert('tb_dataormas',$data);
-		return $result;
+		$get_id = $this->db->insert_id();
+		return $get_id;
 	}
 
-	function simpan_upload($judul){
-		$data = array(
+	function simpan_upload($data){
 
-			'file_lambang_logo' => $judul
-		);
 		$result= $this->db->insert('tb_verifikasi',$data);
 		return $result;
 	}

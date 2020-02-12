@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 10, 2020 at 04:37 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.1
+-- Generation Time: Feb 12, 2020 at 04:50 AM
+-- Server version: 10.4.8-MariaDB
+-- PHP Version: 7.1.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `tb_dataormas` (
   `id_ormas` int(11) NOT NULL,
-  `tanggal_daftar` datetime NOT NULL,
+  `tanggal_daftar` date NOT NULL,
   `nama_ormas` varchar(100) NOT NULL,
   `nama_notaris` varchar(100) NOT NULL,
   `nomortglakta` varchar(50) NOT NULL,
@@ -75,6 +75,21 @@ CREATE TABLE `tb_dataormas` (
   `berbadan_hukum` int(1) NOT NULL,
   `usaha_ormas` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_dataormas`
+--
+
+INSERT INTO `tb_dataormas` (`id_ormas`, `tanggal_daftar`, `nama_ormas`, `nama_notaris`, `nomortglakta`, `nomorsrtpermohonan`, `bidang`, `program_kerja`, `alamat_kantor`, `tempat_pendirian`, `waktu_pendirian`, `asas_ciri_ormas`, `tujuan_ormas`, `nama_pendiri`, `nik_pendiri`, `agama_pendiri`, `kewarganegaraan_pendiri`, `jenis_kelamin_pendiri`, `tempat_lahir_pendiri`, `tanggal_lahir_pendiri`, `statuspkw_pendiri`, `alamat_pendiri`, `nomor_telp_pendiri`, `pekerjaan_pendiri`, `nama_pembina`, `nama_penasihat`, `nama_ketua`, `nik_ketua`, `agama_ketua`, `kewarganegaraan_ketua`, `jenis_kelamin_ketua`, `tempat_lahir_ketua`, `tanggal_lahir_ketua`, `statuspkw_ketua`, `alamat_ketua`, `nomor_telp_ketua`, `nama_sekretaris`, `nama_bendahara`, `masa_akti_kepengurusan`, `keputusan_tertinggi_ormas`, `cabang`, `npwp`, `sumber_keuangan`, `berbadan_hukum`, `usaha_ormas`) VALUES
+(47, '2020-02-12', 's1', '', '', '', '', '', '', '', '2020-02-12', '', '', '', '', 'Islam', 'WNA', '', '', '2020-02-12', 'Kawin', '', '', '', '', '', '', '', 'Islam', 'WNA', 'Pria', '', '2020-02-12', 'Kawin', '', '', '', '', '', '', '', '', 'LN', 1, ''),
+(48, '2020-02-12', '455', '', '', '', '', '', '', '', '2020-02-12', '', '', '', '', 'Islam', 'WNA', '', '', '2020-02-12', 'Kawin', '', '', '', '', '', '', '', 'Islam', 'WNA', 'Pria', '', '2020-02-12', 'Kawin', '', '', '', '', '', '', '', '', 'LN', 1, ''),
+(49, '2020-02-12', '12', '', '', '', '', '', '', '', '2020-02-12', '', '', '', '', 'Islam', 'WNA', '', '', '2020-02-12', 'Kawin', '', '', '', '', '', '', '', 'Islam', 'WNA', 'Pria', '', '2020-02-12', 'Kawin', '', '', '', '', '', '', '', '', 'LN', 1, ''),
+(50, '2020-02-12', '12', '', '', '', '', '', '', '', '2020-02-12', '', '', '', '', 'Islam', 'WNA', '', '', '2020-02-12', 'Kawin', '', '', '', '', '', '', '', 'Islam', 'WNA', 'Pria', '', '2020-02-12', 'Kawin', '', '', '', '', '', '', '', '', 'LN', 1, ''),
+(51, '2020-02-12', '345', '', '', '', '', '', '', '', '2020-02-12', '', '', '', '', 'Islam', 'WNA', '', '', '2020-02-12', 'Kawin', '', '', '', '', '', '', '', 'Islam', 'WNA', 'Pria', '', '2020-02-12', 'Kawin', '', '', '', '', '', '', '', '', 'LN', 1, ''),
+(52, '2020-02-12', '123r', '', '', '', '', '', '', '', '2020-02-12', '', '', '', '', 'Islam', 'WNA', '', '', '2020-02-12', 'Kawin', '', '', '', '', '', '', '', 'Islam', 'WNA', 'Pria', '', '2020-02-12', 'Kawin', '', '', '', '', '', '', '', '', 'LN', 1, ''),
+(53, '2020-02-12', '90pp', '', '', '', '', '', '', '', '2020-02-12', '', '', '', '', 'Islam', 'WNA', '', '', '2020-02-12', 'Kawin', '', '', '', '', '', '', '', 'Islam', 'WNA', 'Pria', '', '2020-02-12', 'Kawin', '', '', '', '', '', '', '', '', 'LN', 1, ''),
+(54, '2020-02-12', 'poi', '', '', '', '', '', '', '', '2020-02-12', '', '', '', '', 'Islam', 'WNA', '', '', '2020-02-12', 'Kawin', '', '', '', '', '', '', '', 'Islam', 'WNA', 'Pria', '', '2020-02-12', 'Kawin', '', '', '', '', '', '', '', '', 'LN', 1, ''),
+(55, '2020-02-12', 'test', '', '', '', '', '', '', '', '2020-02-12', '', '', '', '', 'Islam', 'WNA', '', '', '2020-02-12', 'Kawin', '', '', '', '', '', '', '', 'Islam', 'WNA', 'Pria', '', '2020-02-12', 'Kawin', '', '', '', '', '', '', '', '', 'LN', 1, '');
 
 -- --------------------------------------------------------
 
@@ -133,41 +148,52 @@ INSERT INTO `tb_user` (`id_user`, `nama_user`, `username`, `password`, `level_ak
 CREATE TABLE `tb_verifikasi` (
   `id_verifikasi` int(11) NOT NULL,
   `id_ormas` int(11) NOT NULL,
-  `file_lambang_logo` varchar(30) NOT NULL,
+  `file_lambang_logo` varchar(100) NOT NULL,
   `verif01` int(1) NOT NULL,
-  `file_bendera_ormas` varchar(30) NOT NULL,
+  `file_bendera_ormas` varchar(100) NOT NULL,
   `verif02` int(1) NOT NULL,
-  `file_surat_permohonan` varchar(30) NOT NULL,
+  `file_surat_permohonan` varchar(100) NOT NULL,
   `verif03` int(1) NOT NULL,
-  `file_akta` varchar(30) NOT NULL,
+  `file_akta` varchar(100) NOT NULL,
   `verif04` int(1) NOT NULL,
-  `file_ad_art` varchar(30) NOT NULL,
+  `file_ad_art` varchar(100) NOT NULL,
   `verif05` int(1) NOT NULL,
-  `file_program_ormas` varchar(30) NOT NULL,
+  `file_program_ormas` varchar(100) NOT NULL,
   `verif06` int(1) NOT NULL,
-  `file_skpengurus` varchar(30) NOT NULL,
+  `file_skpengurus` varchar(100) NOT NULL,
   `verif07` int(1) NOT NULL,
-  `file_fc_ktpketua` varchar(30) NOT NULL,
+  `file_fc_ktpketua` varchar(100) NOT NULL,
   `verif08` int(1) NOT NULL,
-  `file_fc_ktpsekretaris` varchar(30) NOT NULL,
+  `file_fc_ktpsekretaris` varchar(100) NOT NULL,
   `verif09` int(1) NOT NULL,
-  `file_fc_ktpbendahara` varchar(30) NOT NULL,
+  `file_fc_ktpbendahara` varchar(100) NOT NULL,
   `verif10` int(1) NOT NULL,
-  `file_sk_domisili` varchar(30) NOT NULL,
+  `file_sk_domisili` varchar(100) NOT NULL,
   `verif11` int(1) NOT NULL,
-  `file_npwp` varchar(30) NOT NULL,
+  `file_npwp` varchar(100) NOT NULL,
   `verif12` int(1) NOT NULL,
-  `file_fotosekretariat` varchar(30) NOT NULL,
+  `file_fotosekretariat` varchar(100) NOT NULL,
   `verif13` int(1) NOT NULL,
-  `file_surat_pernyataan` varchar(30) NOT NULL,
+  `file_surat_pernyataan` varchar(100) NOT NULL,
   `verif14` int(1) NOT NULL,
-  `file_daftarisian` varchar(30) NOT NULL,
+  `file_daftarisian` varchar(100) NOT NULL,
   `verif15` int(1) NOT NULL,
-  `file_suketkeabsahan` varchar(30) NOT NULL,
+  `file_suketkeabsahan` varchar(100) NOT NULL,
   `verif16` int(1) NOT NULL,
-  `file_skt` varchar(30) NOT NULL,
+  `file_skt` varchar(100) NOT NULL,
   `verif17` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_verifikasi`
+--
+
+INSERT INTO `tb_verifikasi` (`id_verifikasi`, `id_ormas`, `file_lambang_logo`, `verif01`, `file_bendera_ormas`, `verif02`, `file_surat_permohonan`, `verif03`, `file_akta`, `verif04`, `file_ad_art`, `verif05`, `file_program_ormas`, `verif06`, `file_skpengurus`, `verif07`, `file_fc_ktpketua`, `verif08`, `file_fc_ktpsekretaris`, `verif09`, `file_fc_ktpbendahara`, `verif10`, `file_sk_domisili`, `verif11`, `file_npwp`, `verif12`, `file_fotosekretariat`, `verif13`, `file_surat_pernyataan`, `verif14`, `file_daftarisian`, `verif15`, `file_suketkeabsahan`, `verif16`, `file_skt`, `verif17`) VALUES
+(46, 51, 'akreditas_jurusan_compressed.pdf', 0, 'akreditas_jurusan_compressed.pdf', 0, 'akreditas_jurusan_compressed.pdf', 0, 'akreditas_jurusan_compressed.pdf', 0, 'akreditas_jurusan_compressed.pdf', 0, 'akreditas_jurusan_compressed.pdf', 0, 'akreditas_jurusan_compressed.pdf', 0, 'akreditas_jurusan_compressed.pdf', 0, 'akreditas_jurusan_compressed.pdf', 0, 'akreditas_jurusan_compressed.pdf', 0, 'akreditas_jurusan_compressed.pdf', 0, 'akreditas_jurusan_compressed.pdf', 0, 'akreditas_jurusan_compressed.pdf', 0, 'akreditas_jurusan_compressed.pdf', 0, 'akreditas_jurusan_compressed.pdf', 0, 'akreditas_jurusan_compressed.pdf', 0, 'akreditas_jurusan_compressed.pdf', 0),
+(47, 52, 'akreditas_jurusan_compressed.pdf', 0, 'AKREDITASI_KAMPUS_compressed.pdf', 0, 'TRANSKIP_NILAI_compressed.pdf', 0, 'Labul-bulan-Maret-2017.pdf', 0, 'Doc_FCC_E402M.pdf', 0, 'akreditas_jurusan_compressed.pdf', 0, 'akreditas_jurusan_compressed.pdf', 0, 'akreditas_jurusan_compressed.pdf', 0, 'akreditas_jurusan_compressed.pdf', 0, 'akreditas_jurusan_compressed.pdf', 0, 'akreditas_jurusan_compressed.pdf', 0, 'akreditas_jurusan_compressed.pdf', 0, 'akreditas_jurusan_compressed.pdf', 0, 'akreditas_jurusan_compressed.pdf', 0, 'akreditas_jurusan_compressed.pdf', 0, 'akreditas_jurusan_compressed.pdf', 0, 'akreditas_jurusan_compressed.pdf', 0),
+(48, 53, 'akreditas_jurusan_compressed.pdf', 0, 'AKREDITASI_KAMPUS_compressed.pdf', 0, 'draft_1_ToR_Tenaga_Pemrograman_1_GFF_KGM_11032019_final-1.pdf', 0, 'kupdf_net_laporan-tenaga-ahli-bulan-oktober-2015.pdf', 0, 'Doc_FCC_E402M.pdf', 0, 'draft_1_ToR_Tenaga_Pemrograman_1_GFF_KGM_11032019_final-1.pdf', 0, 'Labul-bulan-Maret-2017.pdf', 0, 'akreditas_jurusan_compressed.pdf', 0, 'kupdf_net_laporan-tenaga-ahli-bulan-oktober-2015.pdf', 0, 'Labul-bulan-Maret-2017.pdf', 0, 'AKREDITASI_KAMPUS_compressed.pdf', 0, 'Doc_FCC_E402M.pdf', 0, 'akreditas_jurusan_compressed.pdf', 0, 'AKREDITASI_KAMPUS_compressed.pdf', 0, 'akreditas_jurusan_compressed.pdf', 0, 'akreditas_jurusan_compressed.pdf', 0, 'akreditas_jurusan_compressed.pdf', 0),
+(49, 54, 'akreditas_jurusan_compressed.pdf', 0, 'AKREDITASI_KAMPUS_compressed.pdf', 0, 'AKREDITASI_KAMPUS_compressed.pdf', 0, 'Doc_FCC_E402M.pdf', 0, 'Doc_FCC_E402M.pdf', 0, 'draft_1_ToR_Tenaga_Pemrograman_1_GFF_KGM_11032019_final-1.pdf', 0, 'draft_1_ToR_Tenaga_Pemrograman_1_GFF_KGM_11032019_final-1.pdf', 0, 'kupdf_net_laporan-tenaga-ahli-bulan-oktober-2015.pdf', 0, 'kupdf_net_laporan-tenaga-ahli-bulan-oktober-2015.pdf', 0, 'Labul-bulan-Maret-2017.pdf', 0, 'Labul-bulan-Maret-2017.pdf', 0, 'PENGUMUMAN_SELEKSI_CPNS_DAN_FORMASI_CPNS_PEMKAB_BINTAN_TAHUN_2019.pdf', 0, 'TRANSKIP_NILAI_compressed.pdf', 0, 'PENGUMUMAN_SELEKSI_CPNS_DAN_FORMASI_CPNS_PEMKAB_BINTAN_TAHUN_2019.pdf', 0, 'akreditas_jurusan_compressed.pdf', 0, 'TRANSKIP_NILAI_compressed.pdf', 0, 'Labul-bulan-Maret-2017.pdf', 0),
+(50, 55, '1.pdf', 0, '2.pdf', 0, '10.pdf', 0, '11.pdf', 0, '3.pdf', 0, '4.pdf', 0, '12.pdf', 0, '13.pdf', 0, '5.pdf', 0, '6.pdf', 0, '14.pdf', 0, '15.pdf', 0, '7.pdf', 0, '8.pdf', 0, '9.pdf', 0, '16.pdf', 0, '17.pdf', 0);
 
 --
 -- Indexes for dumped tables
@@ -206,7 +232,7 @@ ALTER TABLE `tb_verifikasi`
 -- AUTO_INCREMENT for table `tb_dataormas`
 --
 ALTER TABLE `tb_dataormas`
-  MODIFY `id_ormas` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_ormas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `tb_pejabat`
@@ -224,7 +250,7 @@ ALTER TABLE `tb_user`
 -- AUTO_INCREMENT for table `tb_verifikasi`
 --
 ALTER TABLE `tb_verifikasi`
-  MODIFY `id_verifikasi` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_verifikasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- Constraints for dumped tables
