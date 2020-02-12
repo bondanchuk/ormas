@@ -15,7 +15,7 @@
                 </li>
                 @else
                 <li>
-                    <a href="{{site_url('Register')}}">
+                    <a href="{{site_url('register')}}">
                         <i class="fa fa-edit"></i> Register
                     </a>
                 </li>
