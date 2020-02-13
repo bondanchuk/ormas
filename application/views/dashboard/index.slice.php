@@ -33,6 +33,7 @@
             </div>
             </div>
         </div>
+@include('dashboard.modal')
 <!-- End -->
 @endsection
 @section('js')
@@ -70,22 +71,30 @@
 
 
 			$('#table_dashboard').on('click','.lihat_record',function(){
-				var id_pejabat = $(this).data('kode');
+				var id_ormas = $(this).data('kode');
 				$.ajax({
 					url:"{{base_url('Dashboard/get_detail')}}",
 					method:"POST",
-					data:{id_pejabat:id_pejabat},
+					data:{id_ormas:id_ormas},
 					dataType:"json",
 					success: function(data){
-						$('#modal-ubah').modal('show');
-						$('#ubah-id-pejabat').val(data.ubah_id_pejabat);
-						$('#ubah-jabatan').val(data.ubah_jabatan);
-						$('#ubah-nama').val(data.ubah_nama);
-						$('#ubah-pangkat').val(data.ubah_pangkat);
-						$('#ubah-nip').val(data.ubah_nip);
-						$('#ubah-dinas').val(data.ubah_dinas);
-						$('#ubah-provinsi').val(data.ubah_provinsi);
-						$('#ubah-status').val(data.ubah_status).trigger("change");
+						$('#modal-lihat').modal('show');
+						$('#lihat_id_ormas').val(data.lihat_id_ormas);
+						$('#lihat-tanggal-daftar').val(data.lihat_tanggal_daftar);
+						$('#lihat-nama-ormas').val(data.lihat_nama_ormas);
+						$('#lihat-nama-notaris').val(data.lihat_nama_notaris);
+						$('#lihat-nomortglakta').val(data.lihat_nomortglakta);
+						$('#lihat-bidang').val(data.lihat_bidang);
+						$('#lihat-program-kerja').val(data.lihat_program_kerja);
+						$('#lihat-alamat-kantor').val(data.lihat_alamat_kantor);
+						$('#lihat-tujuan-ormas').val(data.lihat_tujuan_ormas);
+						$('#lihat-nama-pendiri').val(data.lihat_nama_pendiri);
+						$('#lihat-nama-ketua').val(data.lihat_nama_ketua);
+						$('#lihat-nama-sekretaris').val(data.lihat_nama_sekretaris);
+						$('#lihat-nama-bendahara').val(data.lihat_nama_bendahara);
+						$('#lihat-cabang').val(data.lihat_cabang);
+						$('#lihat-sumber-keuangan').val(data.lihat_sumber_keuangan);
+						$('#head-nama').html(data.lihat_nama_ormas);
 					}
 				})
 			});

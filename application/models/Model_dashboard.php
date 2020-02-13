@@ -85,4 +85,9 @@ class Model_dashboard extends CI_Model{
 		$this->db->from($this->table);
 		return $this->db->count_all_results();
 	}
+	function get_detail_model($id_ormas)
+	{
+		$this->db->where('id_ormas', $id_ormas);
+		return $this->db->get($this->table)->result();
+	}
 }
