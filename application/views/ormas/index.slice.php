@@ -20,6 +20,7 @@
                                         <th>Tanggal Daftar</th>
                                         <th>Alamat</th>
                                         <th width="20%">Cabang</th>
+                                        <th width="20%">Status</th>
                                         <th class="text-center" width="5%">Aksi</th>
                                     </tr>
                                 </thead>

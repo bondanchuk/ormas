@@ -62,6 +62,10 @@
                                                 {{form_label('Lambang Ormas')}}<br>
                                                 <a href="javascript:void(0)" class="open btn btn-primary" data-id="{{$file_lambang_logo}}" data-judul="{{'Lambang Ormas'}}" data-toggle="modal">Lihat File</a>
                                             </div>
+                                            <div class="col-3 col-lg-2 text-center">
+                                                <label class='form-control-plaintext'>Verifikasi</label>
+                                                <input id="verif-1" name="verif_01" type="checkbox" value="{{$verif_01}}" class="js-switch" />
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-12 form-group">
@@ -69,6 +73,10 @@
                                             <div class="col-9 col-md-10 col-lg-10 form-control">
                                                 {{form_label('Bendera Ormas')}}<br>
                                                 <a href="javascript:void(0)" class="open btn btn-primary" data-id="{{$file_bendera_ormas}}" data-judul="{{'Bendera Ormas'}}" data-toggle="modal">Lihat File</a>
+                                            </div>
+                                            <div class="col-3 col-lg-2 text-center">
+                                                <label class='form-control-plaintext'>Verifikasi</label>
+                                                <input id="verif-2" name="verif_02" type="checkbox" value="{{$verif_02}}" class="js-switch" />
                                             </div>
                                         </div>
                                     </div>
@@ -159,7 +167,7 @@
                                     <div class="col-12 form-group">
                                         <div class="row">
                                             <div class="col-9 col-md-10 col-lg-10 form-control">
-                                                {{form_label('Fotocpy KTP Bendahara')}}<br>
+                                                {{form_label('Fotocopy KTP Bendahara')}}<br>
                                                 <a href="javascript:void(0)" class="open btn btn-primary" data-id="{{$file_fc_ktpbendahara}}" data-judul="{{'Fotocopy KTP Bendahara'}}" data-toggle="modal">Lihat File</a>
                                             </div>
                                             <div class="col-3 col-lg-2 text-center">
@@ -279,21 +287,51 @@
         $(".modal-body #nama-file").attr("src", data);
     });
 
-    $('#verif-3').on('change', function() {
+    $('#verif-1').on('change', function() {
         var checked = $(this).is(':checked');
         if (checked) {
             var dataObj = {
                 id_ormas: $("#id-ormas").val(),
                 verif_01: 1,
+            };
+            processChange01(dataObj);
+        } else {
+            var dataObj = {
+                id_ormas: $("#id-ormas").val(),
+                verif_01: 0,
+            };
+            processChange01(dataObj);
+        }
+    });
+
+    $('#verif-2').on('change', function() {
+        var checked = $(this).is(':checked');
+        if (checked) {
+            var dataObj = {
+                id_ormas: $("#id-ormas").val(),
                 verif_02: 1,
+            };
+            processChange02(dataObj);
+        } else {
+            var dataObj = {
+                id_ormas: $("#id-ormas").val(),
+                verif_02: 0,
+            };
+            processChange02(dataObj);
+        }
+    });
+
+    $('#verif-3').on('change', function() {
+        var checked = $(this).is(':checked');
+        if (checked) {
+            var dataObj = {
+                id_ormas: $("#id-ormas").val(),
                 verif_03: 1,
             };
             processChange03(dataObj);
         } else {
             var dataObj = {
                 id_ormas: $("#id-ormas").val(),
-                verif_01: 0,
-                verif_02: 0,
                 verif_03: 0,
             };
             processChange03(dataObj);
@@ -537,6 +575,24 @@
             processChange17(dataObj);
         }
     });
+
+    function processChange01(dataObj) {
+        $.ajax({
+            type: "POST",
+            url: "{{base_url('ormas/verif_check01')}}",
+            data: dataObj,
+            dataType: "json",
+        });
+    };
+
+    function processChange02(dataObj) {
+        $.ajax({
+            type: "POST",
+            url: "{{base_url('ormas/verif_check02')}}",
+            data: dataObj,
+            dataType: "json",
+        });
+    };
 
     function processChange03(dataObj) {
         $.ajax({

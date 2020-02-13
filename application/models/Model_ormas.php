@@ -2,14 +2,16 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Model_ormas extends CI_Model
 {
-
+	
       var $table = "tb_dataormas";  
-      var $select_column = array("id_ormas", "tanggal_daftar", "nama_ormas", "alamat_kantor", "cabang" );  
+      var $select_column = array("tb_dataormas.id_ormas", "tanggal_daftar", "nama_ormas", "alamat_kantor", "cabang","verif16");  
       var $order_column = array(null, "id_ormas", "tanggal_daftar", "nama_ormas", "alamat_kantor", "cabang", null);  
       function make_query()  
       {  
            $this->db->select($this->select_column);  
-           $this->db->from($this->table);  
+           $this->db->from($this->table);
+           $this->db->join('tb_verifikasi', 'tb_dataormas.id_ormas=tb_verifikasi.id_ormas');
+  
            if(isset($_POST["search"]["value"]))  
            {  
                 $this->db->like("tanggal_daftar", $_POST["search"]["value"]);  
@@ -59,12 +61,28 @@ class Model_ormas extends CI_Model
         return $this->db->get("tb_verifikasi")->result();
     }
 
-    function verifOrmas03()
+    function verifOrmas01()
     {   
         $id['id_ormas'] = $this->input->post('id_ormas');
         $data = array(
             'verif01'=> $this->input->post('verif_01'),
+        );
+        return $this->db->update('tb_verifikasi', $data, $id);
+    }
+
+    function verifOrmas02()
+    {   
+        $id['id_ormas'] = $this->input->post('id_ormas');
+        $data = array(
             'verif02'=> $this->input->post('verif_02'),
+        );
+        return $this->db->update('tb_verifikasi', $data, $id);
+    }
+
+    function verifOrmas03()
+    {   
+        $id['id_ormas'] = $this->input->post('id_ormas');
+        $data = array(
             'verif03'=> $this->input->post('verif_03'),
         );
         return $this->db->update('tb_verifikasi', $data, $id);

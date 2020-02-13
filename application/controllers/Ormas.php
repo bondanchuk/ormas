@@ -28,7 +28,12 @@ class Ormas extends CI_Controller
 			 $sub_array[] = $row->nama_ormas;  
 			 $sub_array[] = $row->tanggal_daftar; 
 			 $sub_array[] = $row->alamat_kantor;  
-			 $sub_array[] = $row->cabang;  
+			 $sub_array[] = $row->cabang;
+			 if($row->verif16 == '1'){  
+			 $sub_array[] = '<span class="text-success">Surat Keabsahan sudah diterima</span>';
+			 }else{
+			 $sub_array[] = '<span class="text-danger">Surat Keabsahan belum diterima</span>';
+			 }
 			 $sub_array[] = '<div class="btn-group"><a href="ormas/verif/'.$row->id_ormas.'" class="verif_record btn btn-success btn-xs">Verif</a> <a href="javascript:void(0)" name="hapus" data-kode="'.$row->id_ormas.'" data-nama="'.$row->nama_ormas.'" class="hapus_record btn btn-danger btn-xs">Hapus</button></div>';  
 			 $data[] = $sub_array;  
 		}  
@@ -88,6 +93,18 @@ class Ormas extends CI_Controller
         view('ormas.verif_ormas',$panggil);
 	}
 	
+	function verif_check01()
+	{
+		$data = $this->model_ormas->verifOrmas01();
+		json_encode($data);	
+	}
+
+	function verif_check02()
+	{
+		$data = $this->model_ormas->verifOrmas02();
+		json_encode($data);	
+	}
+
 	function verif_check03()
 	{
 		$data = $this->model_ormas->verifOrmas03();
