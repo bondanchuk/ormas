@@ -1928,6 +1928,9 @@ button:focus {
     outline: 0 !important;
 }
 
+.white{
+    color: white;
+}
 .btn {
     border-radius: 3px;
     font-size: inherit;
@@ -6177,7 +6180,7 @@ table.table-mail tr td {
 .ibox-tools a {
     cursor: pointer;
     margin-left: 5px;
-    color: #c4c4c4 !important;
+    color: #fff;
 }
 
 .ibox-tools a.btn-primary {

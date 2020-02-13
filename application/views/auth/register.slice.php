@@ -19,7 +19,7 @@
 					<fieldset>
 						<h2>Informasi Ormas</h2>
 						<div class="row">
-							<div class="col-lg-6">
+							<div class="col-12 col-lg-6">
 								@php
 								$tglDaftar = [
 								'type'=>'text',
@@ -145,7 +145,7 @@
 									{{form_input($bidang)}}
 								</div>
 							</div>
-							<div class="col-lg-6">
+							<div class="col-12 col-lg-6">
 								<div class="form-group">
 									{{form_label('Program Kerja*')}}
 									{{form_input($proker)}}

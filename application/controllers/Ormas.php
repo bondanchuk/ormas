@@ -16,9 +16,14 @@ class Ormas extends CI_Controller
 		view('ormas.index');
 	}
 
-	function ambil_ormas()
+//numpang view edit urgent!
+	public function  edit()
 	{
-		$fetch_data = $this->model_ormas->make_datatables();
+		view('ormas.edit');
+	}
+
+	function ambil_ormas(){  
+		$fetch_data = $this->model_ormas->make_datatables();  
 		$data = array();
 		$no = 1;
 		foreach ($fetch_data as $row) {

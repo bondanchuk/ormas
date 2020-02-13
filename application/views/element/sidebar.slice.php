@@ -20,6 +20,9 @@
                 <li class="@if($this->uri->segment(1) == 'ormas')active @endif">
                     <a href="{{site_url('ormas')}}"><i class="fa fa-group"></i> <span class="nav-label">Data Ormas</span></a>
                 </li>
+                <li class="@if($this->uri->segment(1) == 'ormas')active @endif">
+                    <a href="{{site_url('ormas/edit')}}"><i class="fa fa-group"></i> <span class="nav-label">Edit Sample Page</span></a> <!--urgent! delete this after remake-->
+                </li>
                 <li class="@if($this->uri->segment(1) == 'auth' ||  $this->uri->segment(1) == 'pejabat')active @endif">
                     <a href=""><i class="fa fa-wrench"></i> <span class="nav-label">Manajemen Data</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse @if($this->uri->segment(1) == 'auth' ||  $this->uri->segment(1) == 'pemeriksa' || $this->uri->segment(1) == 'pejabat') in @endif">
