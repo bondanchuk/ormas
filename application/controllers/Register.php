@@ -95,11 +95,8 @@ class Register extends CI_Controller
 			for ($i = 1; $i <= 18; $i++) {
 				if (!empty($_FILES['verif' . $i]['name'])) {
 					if ($this->upload->do_upload('verif' . $i)) {
-						
 						$fileData = $this->upload->data();
 						$uploadData[$i]['file_name'] = $fileData['file_name'];
-
-
 					} else {
 						$this->load->view('upload_form2');
 					}

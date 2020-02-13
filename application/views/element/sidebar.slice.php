@@ -21,7 +21,6 @@
                     <a href=""><i class="fa fa-group"></i> <span class="nav-label">Data Ormas</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
                         <li class="{{$this->uri->segment(1) == 'ormas' ? 'active': ''}}"><a href="{{site_url('ormas')}}">Data Ormas</a></li>
-                        <li class="{{$this->uri->segment(2) == 'verif' ? 'active': ''}}"><a href="{{site_url('ormas/verif')}}">Verifikasi Data Ormas</a></li>
                     </ul>
                 </li>
                 <li class="@if($this->uri->segment(1) == 'auth' ||  $this->uri->segment(1) == 'pejabat')active @endif">
