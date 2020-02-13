@@ -1,11 +1,27 @@
-
+<div class="modal inmodal fade" id="modal-cetak" tabindex="-1" role="dialog"  aria-hidden="true">
+	<div class="modal-dialog modal-lg modal-dialog-centered">
+		<div class="modal-content animated">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<h4 class="modal-title"><span class="fa fa-print"></span> Print Surat Keabsahan</h4>
+				<small class="font-bold"></small>
+			</div>
+			<div class="modal-body">
+			<div id="cetak-frame"></div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
 
 <div class="modal inmodal fade" id="modal-lihat" tabindex="-1" role="dialog"  aria-hidden="true">
 	<div class="modal-dialog modal-lg modal-dialog-centered">
 		<div class="modal-content animated flipInY">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-				<h4 class="modal-title"><span class="fa fa-check"></span> <label name="head-nama" id="head-nama"></label></h4>
+				<h4 class="modal-title"><span class="fa fa-check"></span><label name="head-nama" id="head-nama"></label></h4>
 				<small class="font-bold"></small>
 			</div>
 			{{form_open('',['id' => 'lihat-ormas','role'=>'form'])}}
@@ -200,3 +216,4 @@
 		</div>
 	</div>
 </div>
+

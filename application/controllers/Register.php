@@ -61,7 +61,7 @@ class Register extends CI_Controller
 		"nomor_telp_ketua"=>$this->input->post('telp_ketua'),
 		"nama_sekretaris"=>$this->input->post('nama_sekretaris'),
 		"nama_bendahara"=>$this->input->post('nama_bendahara'),
-		"masa_akti_kepengurusan"=>$this->input->post('masa_bakti'),
+		"masa_bakti_kepengurusan"=>$this->input->post('masa_bakti'),
 		"keputusan_tertinggi_ormas"=>$this->input->post('keputusan'),
 		"cabang"=>$this->input->post('cabang'),
 		"npwp"=>$this->input->post('npwp'),

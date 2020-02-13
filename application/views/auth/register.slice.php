@@ -227,8 +227,8 @@
 					'required'=>'required'
 					];
 					$optionsJk =[
-					'WNA' => 'Pria',
-					'WNI'=> 'Wanita'
+					'Pria' => 'Pria',
+					'Wanita'=> 'Wanita'
 					];
 
 					$alamat = [

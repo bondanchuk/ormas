@@ -69,6 +69,13 @@
                 ]
             });
 
+            $('#table_dashboard').on('click','.cetak_record',function(){
+                var kode = $(this).data('kode');
+                $('#modal-cetak').modal('show');
+                $("#cetak-frame").html('<iframe src="{{base_url()}}dashboard/print_keabsahan/'+kode+'" width="100%" height="450" frameborder="0" ></iframe>');
+
+            });
+             
 
 			$('#table_dashboard').on('click','.lihat_record',function(){
 				var id_ormas = $(this).data('kode');

@@ -23,7 +23,6 @@ class Model_dashboard extends CI_Model{
 			'verif13' => '1',
 			'verif14' => '1',
 			'verif15' => '1',
-			'verif16' => '1',
 			'verif17' => '1',
 		);
 		$this->db->select($this->column);

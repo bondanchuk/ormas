@@ -49,14 +49,14 @@ $(document).ready(function() {
            },  
            "columnDefs":[  
                 {  
-                     "targets":[0,5],  
+                     "targets":[0,5,6],  
                      "orderable":false,
                      "className":"text-center",
   
                 },
                 {
                     "targets":[1,2,3,4],
-                    "className":"text-center",
+                    "className":"text-left",
                 }  
            ],  
             "pageLength": 10,
@@ -68,10 +68,10 @@ $(document).ready(function() {
                 $("#nama").html($(this).data('nama'));
             });
 
-            $('#hapus-pejabat').submit('click',function(){
+            $('#hapus-ormas').submit('click',function(){
                 $.ajax({
                     type : "POST",
-                    url  : "{{base_url('pejabat/hapus_pejabat')}}",
+                    url  : "{{base_url('ormas/hapus_ormas')}}",
                     data:new FormData(this),
                     processData:false,
                     contentType:false,
