@@ -87,7 +87,7 @@ class Ormas extends CI_Controller
 		}
         view('ormas.verif_ormas',$panggil);
 	}
-
+	
 	function verif_check03()
 	{
 		$data = $this->model_ormas->verifOrmas03();

@@ -1,4 +1,4 @@
-<div class="modal inmodal fade" id="modal-lihat" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal inmodal fade hide" id="modal-lihat" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header blue-bg">
@@ -7,7 +7,7 @@
                 <small class="font-bold">Surat Permohonan</small>
             </div>
             <div class="modal-body">
-                <embed width="100%" height="" src="{{site_url('data-upload/'.$Nama.'/'.$file_surat_permohonan.'')}}" type="application/pdf"></embed> 
+                <embed id="nama-file" width="100%" height="500" type="application/pdf" ></embed> 
             </div>
         <div class="modal-footer">
         <button type="button" class="btn btn-white" data-dismiss="modal">Tutup</button>

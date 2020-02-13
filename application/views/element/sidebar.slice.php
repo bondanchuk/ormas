@@ -18,10 +18,7 @@
                     <a href="{{site_url('dashboard')}}"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span></a>
                 </li>
                 <li class="@if($this->uri->segment(1) == 'ormas')active @endif">
-                    <a href=""><i class="fa fa-group"></i> <span class="nav-label">Data Ormas</span><span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level collapse">
-                        <li class="{{$this->uri->segment(1) == 'ormas' ? 'active': ''}}"><a href="{{site_url('ormas')}}">Data Ormas</a></li>
-                    </ul>
+                    <a href="{{site_url('ormas')}}"><i class="fa fa-group"></i> <span class="nav-label">Data Ormas</span></a>
                 </li>
                 <li class="@if($this->uri->segment(1) == 'auth' ||  $this->uri->segment(1) == 'pejabat')active @endif">
                     <a href=""><i class="fa fa-wrench"></i> <span class="nav-label">Manajemen Data</span><span class="fa arrow"></span></a>

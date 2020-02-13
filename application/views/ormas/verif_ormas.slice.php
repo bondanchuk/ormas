@@ -48,7 +48,7 @@
                                             {{form_input($id_ormas)}}
                                             <div class="col-9 col-md-10 col-lg-10 form-control">
                                                 {{form_label('Surat Permohonan')}}<br>
-                                                <a href="javascript:void(0)" class="btn btn-primary" data-directory="'.$Nama.'" data-file="'.$file_surat_permohonan.'" data-toggle="modal" data-target="#modal-lihat">Lihat File</a>
+                                                <a href="#modal-lihat" class="open btn btn-primary" data-id="{{$file_surat_permohonan}}" data-toggle="modal">Lihat File</a>
                                             </div>
                                             <div class="col-3 col-lg-2 text-center">
                                                 <label class='form-control-plaintext'>Verifikasi</label>
@@ -60,7 +60,7 @@
                                         <div class="row">
                                             <div class="col-9 col-md-10 col-lg-10 form-control">
                                                 {{form_label('Lambang Ormas')}}<br>
-                                                <a href="#" class="btn btn-primary" target="_blank">Lihat File</a>
+                                                <a href="#modal-lihat" class="open btn btn-primary" data-id="{{$file_lambang_logo}}" data-toggle="modal">Lihat File</a>
                                             </div>
                                         </div>
                                     </div>
@@ -270,6 +270,12 @@
         }
     });
 
+    $(document).on("click", ".open", function () {
+        var namaFile = $(this).data('id');
+        var dt = "{{site_url('data-upload/'.$Nama.'/'.'"+namaFile+"'.'')}}";
+        alert(dt);
+        $(".modal-body #nama-file").attr("src",dt);
+    });
 
     $('#verif-3').on('change', function() {
         var checked = $(this).is(':checked');
@@ -664,6 +670,8 @@
             dataType: "json",
         });
     };
+
+    
 </script>
 
 
