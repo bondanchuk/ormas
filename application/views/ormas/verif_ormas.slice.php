@@ -48,7 +48,7 @@
                                             {{form_input($id_ormas)}}
                                             <div class="col-9 col-md-10 col-lg-10 form-control">
                                                 {{form_label('Surat Permohonan')}}<br>
-                                                <a href="#modal-lihat" class="open btn btn-primary" data-id="{{$file_surat_permohonan}}" data-toggle="modal">Lihat File</a>
+                                                <a href="javascript:void(0)" class="open btn btn-primary" data-id="{{$file_surat_permohonan}}" data-judul="{{'Surat Permohonan'}}" data-toggle="modal">Lihat File</a>
                                             </div>
                                             <div class="col-3 col-lg-2 text-center">
                                                 <label class='form-control-plaintext'>Verifikasi</label>
@@ -60,7 +60,7 @@
                                         <div class="row">
                                             <div class="col-9 col-md-10 col-lg-10 form-control">
                                                 {{form_label('Lambang Ormas')}}<br>
-                                                <a href="#modal-lihat" class="open btn btn-primary" data-id="{{$file_lambang_logo}}" data-toggle="modal">Lihat File</a>
+                                                <a href="javascript:void(0)" class="open btn btn-primary" data-id="{{$file_lambang_logo}}" data-judul="{{'Lambang Ormas'}}" data-toggle="modal">Lihat File</a>
                                             </div>
                                         </div>
                                     </div>
@@ -68,7 +68,7 @@
                                         <div class="row">
                                             <div class="col-9 col-md-10 col-lg-10 form-control">
                                                 {{form_label('Bendera Ormas')}}<br>
-                                                <a href="#" class="btn btn-primary" target="_blank">Lihat File</a>
+                                                <a href="javascript:void(0)" class="open btn btn-primary" data-id="{{$file_bendera_ormas}}" data-judul="{{'Bendera Ormas'}}" data-toggle="modal">Lihat File</a>
                                             </div>
                                         </div>
                                     </div>
@@ -76,7 +76,7 @@
                                         <div class="row">
                                             <div class="col-9 col-md-10 col-lg-10 form-control">
                                                 {{form_label('Akta')}}<br>
-                                                <a href="#" class="btn btn-primary" target="_blank">Lihat File</a>
+                                                <a href="javascript:void(0)" class="open btn btn-primary" data-id="{{$file_akta}}" data-judul="{{'Akta'}}" data-toggle="modal">Lihat File</a>
                                             </div>
                                             <div class="col-3 col-lg-2 text-center">
                                                 <label class='form-control-plaintext'>Verifikasi</label>
@@ -88,7 +88,7 @@
                                         <div class="row">
                                             <div class="col-9 col-md-10 col-lg-10 form-control">
                                                 {{form_label('AD ART')}}<br>
-                                                <a href="#" class="btn btn-primary" target="_blank">Lihat File</a>
+                                                <a href="javascript:void(0)" class="open btn btn-primary" data-id="{{$file_ad_art}}" data-judul="{{'AD ART'}}" data-toggle="modal">Lihat File</a>
                                             </div>
                                             <div class="col-3 col-lg-2 text-center">
                                                 <label class='form-control-plaintext'>Verifikasi</label>
@@ -100,7 +100,7 @@
                                         <div class="row">
                                             <div class="col-9 col-md-10 col-lg-10 form-control">
                                                 {{form_label('SK Pengurus')}}<br>
-                                                <a href="#" class="btn btn-primary" target="_blank">Lihat File</a>
+                                                <a href="javascript:void(0)" class="open btn btn-primary" data-id="{{$file_skpengurus}}" data-judul="{{'SK Pengurus'}}" data-toggle="modal">Lihat File</a>
                                             </div>
                                             <div class="col-3 col-lg-2 text-center">
                                                 <label class='form-control-plaintext'>Verifikasi</label>
@@ -112,7 +112,7 @@
                                         <div class="row">
                                             <div class="col-9 col-md-10 col-lg-10 form-control">
                                                 {{form_label('Program Ormas')}}<br>
-                                                <a href="#" class="btn btn-primary" target="_blank">Lihat File</a>
+                                                <a href="javascript:void(0)" class="open btn btn-primary" data-id="{{$file_program_ormas}}" data-judul="{{'Program Ormas'}}" data-toggle="modal">Lihat File</a>
                                             </div>
                                             <div class="col-3 col-lg-2 text-center">
                                                 <label class='form-control-plaintext'>Verifikasi</label>
@@ -124,7 +124,7 @@
                                         <div class="row">
                                             <div class="col-9 col-md-10 col-lg-10 form-control">
                                                 {{form_label('SK Domisili')}}<br>
-                                                <a href="#" class="btn btn-primary" target="_blank">Lihat File</a>
+                                                <a href="javascript:void(0)" class="open btn btn-primary" data-id="{{$file_sk_domisili}}" data-judul="{{'SK Domisili'}}" data-toggle="modal">Lihat File</a>
                                             </div>
                                             <div class="col-3 col-lg-2 text-center">
                                                 <label class='form-control-plaintext'>Verifikasi</label>
@@ -136,7 +136,7 @@
                                         <div class="row">
                                             <div class="col-9 col-md-10 col-lg-10 form-control">
                                                 {{form_label('Fotocopy KTP Ketua')}}<br>
-                                                <a href="#" class="btn btn-primary" target="_blank">Lihat File</a>
+                                                <a href="javascript:void(0)" class="open btn btn-primary" data-id="{{$file_fc_ktpketua}}" data-judul="{{'Fotocopy KTP Ketua'}}" data-toggle="modal">Lihat File</a>
                                             </div>
                                             <div class="col-3 col-lg-2 text-center">
                                                 <label class='form-control-plaintext'>Verifikasi</label>
@@ -148,7 +148,7 @@
                                         <div class="row">
                                             <div class="col-9 col-md-10 col-lg-10 form-control">
                                                 {{form_label('Fotocopy KTP Sekretaris')}}<br>
-                                                <a href="#" class="btn btn-primary" target="_blank">Lihat File</a>
+                                                <a href="javascript:void(0)" class="open btn btn-primary" data-id="{{$file_fc_ktpsekretaris}}" data-judul="{{'Fotocopy KTP Sekretaris'}}" data-toggle="modal">Lihat File</a>
                                             </div>
                                             <div class="col-3 col-lg-2 text-center">
                                                 <label class='form-control-plaintext'>Verifikasi</label>
@@ -160,7 +160,7 @@
                                         <div class="row">
                                             <div class="col-9 col-md-10 col-lg-10 form-control">
                                                 {{form_label('Fotocpy KTP Bendahara')}}<br>
-                                                <a href="#" class="btn btn-primary" target="_blank">Lihat File</a>
+                                                <a href="javascript:void(0)" class="open btn btn-primary" data-id="{{$file_fc_ktpbendahara}}" data-judul="{{'Fotocopy KTP Bendahara'}}" data-toggle="modal">Lihat File</a>
                                             </div>
                                             <div class="col-3 col-lg-2 text-center">
                                                 <label class='form-control-plaintext'>Verifikasi</label>
@@ -172,7 +172,7 @@
                                         <div class="row">
                                             <div class="col-9 col-md-10 col-lg-10 form-control">
                                                 {{form_label('NPWP')}}<br>
-                                                <a href="#" class="btn btn-primary" target="_blank">Lihat File</a>
+                                                <a href="javascript:void(0)" class="open btn btn-primary" data-id="{{$file_npwp}}" data-judul="{{'NPWP'}}" data-toggle="modal">Lihat File</a>
                                             </div>
                                             <div class="col-3 col-lg-2 text-center">
                                                 <label class='form-control-plaintext'>Verifikasi</label>
@@ -184,7 +184,7 @@
                                         <div class="row">
                                             <div class="col-9 col-md-10 col-lg-10 form-control">
                                                 {{form_label('Foto Sekretariat')}}<br>
-                                                <a href="#" class="btn btn-primary" target="_blank">Lihat File</a>
+                                                <a href="javascript:void(0)" class="open btn btn-primary" data-id="{{$file_fotosekretariat}}" data-judul="{{'Foto Sekretariat'}}" data-toggle="modal">Lihat File</a>
                                             </div>
                                             <div class="col-3 col-lg-2 text-center">
                                                 <label class='form-control-plaintext'>Verifikasi</label>
@@ -196,7 +196,7 @@
                                         <div class="row">
                                             <div class="col-9 col-md-10 col-lg-10 form-control">
                                                 {{form_label('Surat Keabsahan')}}<br>
-                                                <a href="#" class="btn btn-primary" target="_blank">Lihat File</a>
+                                                <a href="javascript:void(0)" class="open btn btn-primary" data-id="{{$file_suketkeabsahan}}" data-judul="{{'Surat Keabsahan'}}" data-toggle="modal">Lihat File</a>
                                             </div>
                                             <div class="col-3 col-lg-2 text-center">
                                                 <label class='form-control-plaintext'>Verifikasi</label>
@@ -208,7 +208,7 @@
                                         <div class="row">
                                             <div class="col-9 col-md-10 col-lg-10 form-control">
                                                 {{form_label('Surat Pernyataan')}}<br>
-                                                <a href="#" class="btn btn-primary" target="_blank">Lihat File</a>
+                                                <a href="javascript:void(0)" class="open btn btn-primary" data-id="{{$file_surat_pernyataan}}" data-judul="{{'Surat Pernyataan'}}" data-toggle="modal">Lihat File</a>
                                             </div>
                                             <div class="col-3 col-lg-2 text-center">
                                                 <label class='form-control-plaintext'>Verifikasi</label>
@@ -220,7 +220,7 @@
                                         <div class="row">
                                             <div class="col-9 col-md-10 col-lg-10 form-control">
                                                 {{form_label('SKT')}} <br>
-                                                <a href="#" class="btn btn-primary" target="_blank">Lihat File</a>
+                                                <a href="javascript:void(0)" class="open btn btn-primary" data-id="{{$file_skt}}" data-judul="{{'SKT'}}" data-toggle="modal">Lihat File</a>
                                             </div>
                                             <div class="col-3 col-lg-2 text-center">
                                                 <label class='form-control-plaintext'>Verifikasi</label>
@@ -232,7 +232,7 @@
                                         <div class="row">
                                             <div class="col-9 col-md-10 col-lg-10 form-control">
                                                 {{form_label('Daftar Isian')}}<br>
-                                                <a href="#" class="btn btn-primary" target="_blank">Lihat File</a>
+                                                <a href="javascript:void(0)" class="open btn btn-primary" data-id="{{$file_daftarisian}}" data-judul="{{'Daftar Isian'}}" data-toggle="modal">Lihat File</a>
                                             </div>
                                             <div class="col-3 col-lg-2 text-center">
                                                 <label class='form-control-plaintext'>Verifikasi</label>
@@ -261,20 +261,22 @@
     elems.forEach(function(html) {
         var switchery = new Switchery(html);
     });
-    $(window).on("load", function(){
-        for(i = 0; i<=17; i++){
-            if ($("#verif-"+i).val() == 1) {
-                $("#verif-"+i).attr("checked", true);
-                $("#verif-"+i).trigger("click");
+    $(window).on("load", function() {
+        for (i = 0; i <= 17; i++) {
+            if ($("#verif-" + i).val() == 1) {
+                $("#verif-" + i).attr("checked", true);
+                $("#verif-" + i).trigger("click");
             }
         }
     });
 
-    $(document).on("click", ".open", function () {
+    $(document).on("click", ".open", function() {
+        $('#modal-lihat').modal('show');
         var namaFile = $(this).data('id');
-        var dt = "{{site_url('data-upload/'.$Nama.'/'.'"+namaFile+"'.'')}}";
-        alert(dt);
-        $(".modal-body #nama-file").attr("src",dt);
+        var judulFile = $(this).data('judul');
+        var data = "{{site_url('data-upload/'.$Nama.'/'.'" + namaFile + "'.'')}}";
+        $("#judul-file").html(judulFile);
+        $(".modal-body #nama-file").attr("src", data);
     });
 
     $('#verif-3').on('change', function() {
@@ -670,8 +672,6 @@
             dataType: "json",
         });
     };
-
-    
 </script>
 
 
