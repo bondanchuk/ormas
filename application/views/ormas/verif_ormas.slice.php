@@ -26,9 +26,11 @@
                     <div class="tabs-container">
                         <ul class="nav nav-tabs" role="tablist">
                             <li><a class="nav-link active" data-toggle="tab" href="#tab-1">Data Pendukung</a></li>
+                            <li><a class="nav-link" data-toggle="tab" href="#tab-2">Cetak Surat Keabsahan</a></li>
+                            <li><a class="nav-link" data-toggle="tab" href="#tab-3">Upload Surat Keabsahan</a></li> <!-- Contoh -->
                         </ul>
                         <div class="tab-content">
-                            <!-- Tab #1  -->
+                        <!-- Tab #1  -->
                             <div role="tabpanel" id="tab-1" class="tab-pane active">
                                 <div class="panel-body">
                                     {{form_open('',['id'=>'form-verif-01'])}}
@@ -251,7 +253,81 @@
                                     {{form_close()}}
                                 </div>
                             </div>
-
+                        <!-- Tab #2 Keabsahan  -->
+                             <div role="tabpanel" id="tab-2" class="tab-pane">
+                                <div class="panel-body">
+                                    <div class="col-12 form-group">
+                                        <div class="row">
+                                            <div class="col-12 col-md-6 col-lg-6">
+                                                <h3>Cetak Surat Keabsahan</h3>
+                                                <div class="form-group">
+                                                    {{form_label('Nama Pemeriksa')}}
+                                                    <!-- {{form_input($nama_pendiri)}} --> <!--Select Box nama Pemeriksa-->
+                                                    <input type="text" class="form-control" placeholder="Pak Pemeriksa" disabled> <!--Contoh aja | Hapus later-->
+                                                </div>
+                                                <div class="form-group">
+                                                    {{form_label('Nama Pejabat')}}
+                                                    <!-- {{form_input($nama_pendiri)}} --> <!--Select Box Nama pejabat -->
+                                                    <input type="text" class="form-control" placeholder="Pak pejabat" disabled> <!--Contoh aja | Hapus later-->
+                                                </div>
+                                                <a href="#" class="btn btn-primary ">Cetak Surat Keabsahan</a> <!-- urgent! Bentuk PDF, ref ke contoh surat -->
+                                            </div>
+                                            <div class="col-12 col-md-6 col-lg-6">
+                                                <h3>Upload Surat Keabsahan</h3>
+                                                <div class="form-group">
+                                                    {{form_label('Status')}}
+                                                    <!-- {{form_input($nama_pendiri)}} --> <!--Select Box Nama pejabat -->
+                                                    <input type="text" class="form-control" placeholder="Terverifikasi" disabled> <!--Contoh aja | Hapus later-->
+                                                </div>
+                                                <div class="form-group">
+                                                    {{form_label('Lihat Surat Keabsahan')}}
+                                                    <!-- {{form_input($nama_pendiri)}} --> <!--Select Box nama Pemeriksa-->
+                                                    <a href="javascript:void(0)" class="open btn btn-primary" data-id="{{$file_lambang_logo}}" data-judul="{{'Lambang Ormas'}}" data-toggle="modal">Lihat File</a> <!--contoh-->   
+                                                </div>
+                                                <a href="#" class="btn btn-primary ">Upload Surat Keabsahan</a> <!-- Urgent! syarat uploadnya, diskusi dulu -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <!-- Tab #3 Upload Keabsahan  Urgent! (In case mau pisahin antara cetak dan upload)  -->
+                            <div role="tabpanel" id="tab-3" class="tab-pane">
+                                <div class="panel-body">
+                                    <div class="col-12 form-group">
+                                        <div class="row">
+                                            <div class="col-12 col-md-6 col-lg-6">
+                                                <h3>Cetak Surat Keabsahan</h3>
+                                                <div class="form-group">
+                                                    {{form_label('Nama Pemeriksa')}}
+                                                    <!-- {{form_input($nama_pendiri)}} --> <!--Select Box nama Pemeriksa-->
+                                                    <input type="text" class="form-control" placeholder="Pak Pemeriksa" disabled> <!--Contoh aja | Hapus later-->
+                                                </div>
+                                                <div class="form-group">
+                                                    {{form_label('Nama Pejabat')}}
+                                                    <!-- {{form_input($nama_pendiri)}} --> <!--Select Box Nama pejabat -->
+                                                    <input type="text" class="form-control" placeholder="Pak pejabat" disabled> <!--Contoh aja | Hapus later-->
+                                                </div>
+                                                <a href="#" class="btn btn-primary ">Cetak Surat Keabsahan</a>
+                                            </div>
+                                            <div class="col-12 col-md-6 col-lg-6">
+                                                <h3>Upload Surat Keabsahan</h3>
+                                                <div class="form-group">
+                                                    {{form_label('Status')}}
+                                                    <!-- {{form_input($nama_pendiri)}} --> <!--Select Box Nama pejabat -->
+                                                    <input type="text" class="form-control" placeholder="Terverifikasi" disabled> <!--Contoh aja | Hapus later-->
+                                                </div>
+                                                <div class="form-group">
+                                                    {{form_label('Lihat Surat Keabsahan')}}
+                                                    <!-- {{form_input($nama_pendiri)}} --> <!--Select Box nama Pemeriksa-->
+                                                    <a href="javascript:void(0)" class="open btn btn-primary" data-id="{{$file_lambang_logo}}" data-judul="{{'Lambang Ormas'}}" data-toggle="modal">Lihat File</a> <!--contoh-->   
+                                                </div>
+                                                <a href="#" class="btn btn-primary ">Upload Surat Keabsahan</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
                         </div>
                     </div>
                 </div>
