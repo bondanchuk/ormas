@@ -58,9 +58,10 @@ class Ormas extends CI_Controller
 		$panggil = array();
 		$data_ormas = $this->model_ormas->ambilSatuOrmas($id);
 		$data_verif = $this->model_ormas->ambilSatuVerif($id);
-		$panggil = 	['ID' => $data_ormas->id_ormas, 'Nama' => $data_ormas->nama_ormas];
+		$panggil = 	['ID' => $data_ormas->id_ormas, 'Nama' => $data_ormas->nama_ormas, 'pejabat' => $this->model_ormas->ambilPejabat()];
 		foreach ($data_verif as $row) {
 			$panggil['id_ormas'] = $row->id_ormas;
+			$panggil['id_pejabat'] = $row->id_pejabat;
 			$panggil['file_lambang_logo'] = $row->file_lambang_logo;
 			$panggil['verif_01'] = $row->verif01;
 			$panggil['file_bendera_ormas'] = $row->file_bendera_ormas;
@@ -101,6 +102,12 @@ class Ormas extends CI_Controller
 
 	function hapus_ormas(){
 		$data = $this->model_ormas->hapusOrmas();
+		json_encode($data);
+	}
+
+	function ubah_pemeriksa()
+	{
+		$data = $this->model_ormas->ubahPemeriksa();
 		json_encode($data);
 	}
 

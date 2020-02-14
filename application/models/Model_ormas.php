@@ -47,6 +47,12 @@ class Model_ormas extends CI_Model
         return $this->db->count_all_results();
     }
 
+    function ambilPejabat()
+    {
+        $this->db->where("Status", "Pemeriksa");
+        return $this->db->get("tb_pejabat")->result();
+    }
+
     function ambilSatuOrmas($id_ormas)
     {
         $this->db->where('id_ormas', $id_ormas);
@@ -57,6 +63,13 @@ class Model_ormas extends CI_Model
     {
         $this->db->where('id_ormas', $id_ormas);
         return $this->db->get("tb_verifikasi")->result();
+    }
+
+    function ubahPemeriksa()
+    {   
+        $id['id_ormas'] = $this->input->post('id_ormas');
+        $data['id_pejabat'] = $this->input->post('id_pemeriksa');
+        return $this->db->update('tb_verifikasi', $data, $id);
     }
 
     function hapusOrmas()

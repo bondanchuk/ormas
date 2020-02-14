@@ -26,11 +26,10 @@
                     <div class="tabs-container">
                         <ul class="nav nav-tabs" role="tablist">
                             <li><a class="nav-link active" data-toggle="tab" href="#tab-1">Data Pendukung</a></li>
-                            <li><a class="nav-link" data-toggle="tab" href="#tab-2">Cetak Surat Keabsahan</a></li>
-                            <li><a class="nav-link" data-toggle="tab" href="#tab-3">Upload Surat Keabsahan</a></li> <!-- Contoh -->
+                            <li><a class="nav-link" data-toggle="tab" href="#tab-2">Surat Keabsahan</a></li>
                         </ul>
                         <div class="tab-content">
-                        <!-- Tab #1  -->
+                            <!-- Tab #1  -->
                             <div role="tabpanel" id="tab-1" class="tab-pane active">
                                 <div class="panel-body">
                                     {{form_open('',['id'=>'form-verif-01'])}}
@@ -205,18 +204,6 @@
                                     <div class="col-12 form-group">
                                         <div class="row">
                                             <div class="col-9 col-md-10 col-lg-10 form-control">
-                                                {{form_label('Surat Keabsahan')}}<br>
-                                                <a href="javascript:void(0)" class="open btn btn-primary" data-id="{{$file_suketkeabsahan}}" data-judul="{{'Surat Keabsahan'}}" data-toggle="modal">Lihat File</a>
-                                            </div>
-                                            <div class="col-3 col-lg-2 text-center">
-                                                <label class='form-control-plaintext'>Verifikasi</label>
-                                                <input id="verif-16" name="verif_16" value="{{$verif_16}}" type="checkbox" class="js-switch" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 form-group">
-                                        <div class="row">
-                                            <div class="col-9 col-md-10 col-lg-10 form-control">
                                                 {{form_label('Surat Pernyataan')}}<br>
                                                 <a href="javascript:void(0)" class="open btn btn-primary" data-id="{{$file_surat_pernyataan}}" data-judul="{{'Surat Pernyataan'}}" data-toggle="modal">Lihat File</a>
                                             </div>
@@ -250,39 +237,50 @@
                                             </div>
                                         </div>
                                     </div>
-                                    {{form_close()}}
                                 </div>
                             </div>
-                        <!-- Tab #2 Keabsahan  -->
-                             <div role="tabpanel" id="tab-2" class="tab-pane">
+                            <!-- Tab #2 Keabsahan  -->
+                            <div role="tabpanel" id="tab-2" class="tab-pane">
                                 <div class="panel-body">
                                     <div class="col-12 form-group">
                                         <div class="row">
+                                            @php
+                                            $pemeriksa = [
+                                            'id' => 'id-pemeriksa',
+                                            'class' => 'select2 form-control',
+                                            'required'
+                                            ];
+                                            foreach($pejabat as $row)
+                                            {
+                                            $option_pejabat[''] = '';
+                                            $option_pejabat[$row->id_pejabat] = $row->Nama;
+                                            }
+                                            @endphp
                                             <div class="col-12 col-md-6 col-lg-6">
                                                 <h3>Cetak Surat Keabsahan</h3>
                                                 <div class="form-group">
                                                     {{form_label('Nama Pemeriksa')}}
-                                                    <!-- {{form_input($nama_pendiri)}} --> <!--Select Box nama Pemeriksa-->
-                                                    <input type="text" class="form-control" placeholder="Pak Pemeriksa" disabled> <!--Contoh aja | Hapus later-->
+                                                    <!-- {{form_input($nama_pendiri)}} -->
+                                                    <!--Select Box nama Pemeriksa-->
+                                                    {{form_dropdown('id_pemeriksa', $option_pejabat, $id_pejabat,$pemeriksa)}}
                                                 </div>
-                                                <div class="form-group">
-                                                    {{form_label('Nama Pejabat')}}
-                                                    <!-- {{form_input($nama_pendiri)}} --> <!--Select Box Nama pejabat -->
-                                                    <input type="text" class="form-control" placeholder="Pak pejabat" disabled> <!--Contoh aja | Hapus later-->
-                                                </div>
-                                                <a href="#" class="btn btn-primary ">Cetak Surat Keabsahan</a> <!-- urgent! Bentuk PDF, ref ke contoh surat -->
+                                                <a href="javascript:void(0)" class="cetak_record btn btn-primary" data-toggle="modal">Cetak Surat Keabsahan</a> <!-- urgent! Bentuk PDF, ref ke contoh surat -->
                                             </div>
                                             <div class="col-12 col-md-6 col-lg-6">
                                                 <h3>Upload Surat Keabsahan</h3>
                                                 <div class="form-group">
                                                     {{form_label('Status')}}
-                                                    <!-- {{form_input($nama_pendiri)}} --> <!--Select Box Nama pejabat -->
-                                                    <input type="text" class="form-control" placeholder="Terverifikasi" disabled> <!--Contoh aja | Hapus later-->
+                                                    <!-- {{form_input($nama_pendiri)}} -->
+                                                    <!--Select Box Nama pejabat -->
+                                                    <input type="text" class="form-control" placeholder="Terverifikasi" disabled>
+                                                    <!--Contoh aja | Hapus later-->
                                                 </div>
                                                 <div class="form-group">
                                                     {{form_label('Lihat Surat Keabsahan')}}
-                                                    <!-- {{form_input($nama_pendiri)}} --> <!--Select Box nama Pemeriksa-->
-                                                    <a href="javascript:void(0)" class="open btn btn-primary" data-id="{{$file_lambang_logo}}" data-judul="{{'Lambang Ormas'}}" data-toggle="modal">Lihat File</a> <!--contoh-->   
+                                                    <!-- {{form_input($nama_pendiri)}} -->
+                                                    <!--Select Box nama Pemeriksa-->
+                                                    <a href="javascript:void(0)" class="open btn btn-primary" data-id="{{$file_lambang_logo}}" data-judul="{{'Lambang Ormas'}}" data-toggle="modal">Lihat File</a>
+                                                    <!--contoh-->
                                                 </div>
                                                 <a href="#" class="btn btn-primary ">Upload Surat Keabsahan</a> <!-- Urgent! syarat uploadnya, diskusi dulu -->
                                             </div>
@@ -290,44 +288,7 @@
                                     </div>
                                 </div>
                             </div>
-                        <!-- Tab #3 Upload Keabsahan  Urgent! (In case mau pisahin antara cetak dan upload)  -->
-                            <div role="tabpanel" id="tab-3" class="tab-pane">
-                                <div class="panel-body">
-                                    <div class="col-12 form-group">
-                                        <div class="row">
-                                            <div class="col-12 col-md-6 col-lg-6">
-                                                <h3>Cetak Surat Keabsahan</h3>
-                                                <div class="form-group">
-                                                    {{form_label('Nama Pemeriksa')}}
-                                                    <!-- {{form_input($nama_pendiri)}} --> <!--Select Box nama Pemeriksa-->
-                                                    <input type="text" class="form-control" placeholder="Pak Pemeriksa" disabled> <!--Contoh aja | Hapus later-->
-                                                </div>
-                                                <div class="form-group">
-                                                    {{form_label('Nama Pejabat')}}
-                                                    <!-- {{form_input($nama_pendiri)}} --> <!--Select Box Nama pejabat -->
-                                                    <input type="text" class="form-control" placeholder="Pak pejabat" disabled> <!--Contoh aja | Hapus later-->
-                                                </div>
-                                                <a href="#" class="btn btn-primary ">Cetak Surat Keabsahan</a>
-                                            </div>
-                                            <div class="col-12 col-md-6 col-lg-6">
-                                                <h3>Upload Surat Keabsahan</h3>
-                                                <div class="form-group">
-                                                    {{form_label('Status')}}
-                                                    <!-- {{form_input($nama_pendiri)}} --> <!--Select Box Nama pejabat -->
-                                                    <input type="text" class="form-control" placeholder="Terverifikasi" disabled> <!--Contoh aja | Hapus later-->
-                                                </div>
-                                                <div class="form-group">
-                                                    {{form_label('Lihat Surat Keabsahan')}}
-                                                    <!-- {{form_input($nama_pendiri)}} --> <!--Select Box nama Pemeriksa-->
-                                                    <a href="javascript:void(0)" class="open btn btn-primary" data-id="{{$file_lambang_logo}}" data-judul="{{'Lambang Ormas'}}" data-toggle="modal">Lihat File</a> <!--contoh-->   
-                                                </div>
-                                                <a href="#" class="btn btn-primary ">Upload Surat Keabsahan</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        
+                            {{form_close()}}
                         </div>
                     </div>
                 </div>
@@ -345,6 +306,11 @@
     elems.forEach(function(html) {
         var switchery = new Switchery(html);
     });
+    $('#id-pemeriksa').select2({
+        placeholder: "Pilih pemeriksa",
+        width: "100%"
+    });
+
     $(window).on("load", function() {
         for (i = 0; i <= 17; i++) {
             if ($("#verif-" + i).val() == 1) {
@@ -362,6 +328,30 @@
         $("#judul-file").html(judulFile);
         $(".modal-body #nama-file").attr("src", data);
     });
+
+    $(document).on('click','.cetak_record',function(){
+        $('#modal-cetak').modal('show');
+        var kode = $("#id-ormas").val();
+        $("#cetak-frame").html('<iframe src="{{base_url()}}dashboard/print_keabsahan/'+kode+'" width="100%" height="450" frameborder="0" ></iframe>');
+    });
+
+    
+    $('#id-pemeriksa').on('change',function() {
+        var dataObj =  {
+            id_ormas: $("#id-ormas").val(),
+            id_pemeriksa: $("#id-pemeriksa").val(),
+            };
+        processChangePemeriksa(dataObj);
+    });
+
+    function processChangePemeriksa(dataObj) {
+        $.ajax({
+            type: "POST",
+            url: "{{base_url('ormas/ubah_pemeriksa')}}",
+            data: dataObj,
+            dataType: "json",
+        });
+    };
 
     $('#verif-1').on('change', function() {
         var checked = $(this).is(':checked');
@@ -618,23 +608,6 @@
         }
     });
 
-    $('#verif-16').on('change', function() {
-        var checked = $(this).is(':checked');
-        if (checked) {
-            var dataObj = {
-                id_ormas: $("#id-ormas").val(),
-                verif_16: 1,
-            };
-            processChange16(dataObj);
-        } else {
-            var dataObj = {
-                id_ormas: $("#id-ormas").val(),
-                verif_16: 0,
-            };
-            processChange16(dataObj);
-        }
-    });
-
     $('#verif-17').on('change', function() {
         var checked = $(this).is(':checked');
         if (checked) {
@@ -782,15 +755,6 @@
         $.ajax({
             type: "POST",
             url: "{{base_url('ormas/verif_check15')}}",
-            data: dataObj,
-            dataType: "json",
-        });
-    };
-
-    function processChange16(dataObj) {
-        $.ajax({
-            type: "POST",
-            url: "{{base_url('ormas/verif_check16')}}",
             data: dataObj,
             dataType: "json",
         });
