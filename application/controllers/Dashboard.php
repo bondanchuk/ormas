@@ -103,6 +103,7 @@ class Dashboard extends CI_Controller
 			$output['lihat_tujuan_ormas'] = $row->tujuan_ormas;
 
 			$output['lihat_nama_pendiri'] = $row->nama_pendiri;
+			$output['lihat_nik_pendiri'] = $row->nik_pendiri;
 			$output['lihat_agama_pendiri'] = $row->agama_pendiri;
 			$output['lihat_kewarganegaraan_pendiri'] = $row->kewarganegaraan_pendiri;
 			$output['lihat_jenis_kelamin_pendiri'] = $row->jenis_kelamin_pendiri;

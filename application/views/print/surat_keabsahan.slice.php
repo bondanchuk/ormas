@@ -12,10 +12,27 @@
         .text-center{
             text-align:center;
         }
+        td {
+            padding:5px;
+            border: 1px solid black;
+        }
+        .h-50{
+            height: 150px;
+        }
+        .h-25{
+            height: 25px;
+        }
+        .h-10{
+            height: 10px;
+        }
+        .buwu{
+            border-style: solid;
+            border-color: red;
+        }
     </style>
-<body>
-<h3 class="text-center">Formulir Keabsahan Dokumen</h3>
-<table width="100%">
+<body class="buwu">
+<h3 class="text-center pb-5">Formulir Keabsahan Dokumen</h3>
+<table class="border" width="100%">
     <tr>
         <td>1.</td>
         <td>Nama Organisasi</td>
@@ -76,21 +93,73 @@
         <td>:</td>
         <td>{{$lihat_tujuan_ormas}}</td>
     </tr>
+<!-- Data pendiri  -->
     <tr>
         <td>11.</td>
         <td>Nama Pendiri</td>
         <td>:</td>
-        <td>{{$lihat_nama_pendiri}}, 
-            {{$lihat_agama_pendiri}}, 
-            {{$lihat_kewarganegaraan_pendiri}}, 
-            {{$lihat_jenis_kelamin_pendiri}}, 
-            {{$lihat_tempat_lahir_pendiri}}/{{date('d-m-Y', strtotime($lihat_tanggal_lahir_pendiri))}},
-            {{$lihat_status_pkw_pendiri}},
-            {{$lihat_alamat_pendiri}},
-            {{$lihat_notelp_pendiri}},
-            {{$lihat_pekerjaan_pendiri}}
-        </td>
+        <tr>
+            <td colspan="1"></td>
+            <td>Nama</td>
+            <td>:</td>
+            <td>{{$lihat_nama_pendiri}}</td>
+        </tr>
+        <tr>
+            <td colspan="1"></td>
+            <td>NIK</td>
+            <td>:</td>
+            <td>{{$lihat_nik_pendiri}}</td>
+        </tr>
+        <tr>
+            <td colspan="1"></td>
+            <td>Agama</td>
+            <td>:</td>
+            <td>{{$lihat_agama_pendiri}}</td>
+        </tr>
+        <tr>
+            <td colspan="1"></td>
+            <td>Kewarganegaraan</td>
+            <td>:</td>
+            <td>{{$lihat_kewarganegaraan_pendiri}}</td>
+        </tr>
+        <tr>
+            <td colspan="1"></td>
+            <td>Jenis Kelamin</td>
+            <td>:</td>
+            <td>{{$lihat_jenis_kelamin_pendiri}}</td>
+        </tr>
+        <tr>
+            <td colspan="1"></td>
+            <td>Tempat/Tanggal Lahir</td>
+            <td>:</td>
+            <td>{{$lihat_tempat_lahir_pendiri}}/{{date('d-m-Y', strtotime($lihat_tanggal_lahir_pendiri))}}</td>
+        </tr>
+        <tr>
+            <td colspan="1"></td>
+            <td>Status Perkawinan</td>
+            <td>:</td>
+            <td>{{$lihat_status_pkw_pendiri}}</td>
+        </tr>
+        <tr>
+            <td colspan="1"></td>
+            <td>Alamat</td>
+            <td>:</td>
+            <td>{{$lihat_alamat_pendiri}}</td>
+        </tr>
+        <tr>
+            <td colspan="1"></td>
+            <td>Nomor Telepon/Hp</td>
+            <td>:</td>
+            <td>{{$lihat_notelp_pendiri}}</td>
+        </tr>
+        <tr>
+            <td colspan="1"></td>
+            <td>Pekerjaan</td>
+            <td>:</td>
+            <td>{{$lihat_pekerjaan_pendiri}}</td>
+        </tr>
     </tr>
+<!-- Data pendiri End  -->
     <tr>
         <td>12.</td>
         <td>Nama Pembina</td>
@@ -106,34 +175,87 @@
     <tr>
         <td>14.</td>
         <td>Biodata Pengurus</td>
-        <td colspan="2">:</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td>a.Ketua/Sebutan Lain</td>
         <td>:</td>
-        <td>{{$lihat_nama_ketua}}, 
-            {{$lihat_nik_ketua}}, 
-            {{$lihat_agama_ketua}}, 
-            {{$lihat_kewarganegaraan_ketua}}, 
-            {{$lihat_jenis_kelamin_ketua}}, 
-            {{$lihat_tempat_lahir_ketua}}/{{date('d-m-Y', strtotime($lihat_tanggal_lahir_ketua))}},
-            {{$lihat_status_perkawinan_ketua}},
-            {{$lihat_alamat_ketua}},
-            {{$lihat_nomor_telpon_ketua}},
-            {{$lihat_pekerjaan_ketua}}
-        </td>
+    </tr>
+<!-- Ketua  -->
+    <tr>
+        <td colspan="1"></td>
+        <td>a.Ketua/Sebutan Lain</td>
+        <tr>
+            <td colspan="1"></td>
+            <td>Nama</td>
+            <td>:</td>
+            <td>{{$lihat_nama_ketua}}</td>
+        </tr>
+        <tr>
+            <td colspan="1"></td>
+            <td>NIK</td>
+            <td>:</td>
+            <td>{{$lihat_nik_ketua}}</td>
+        </tr>
+        <tr>
+            <td colspan="1"></td>
+            <td>Agama</td>
+            <td>:</td>
+            <td>{{$lihat_agama_ketua}}</td>
+        </tr>
+        <tr>
+            <td colspan="1"></td>
+            <td>Kewarganegaraan</td>
+            <td>:</td>
+            <td>{{$lihat_kewarganegaraan_ketua}}</td>
+        </tr>
+        <tr>
+            <td colspan="1"></td>
+            <td>Jenis Kelamin</td>
+            <td>:</td>
+            <td>{{$lihat_jenis_kelamin_ketua}}</td>
+        </tr>
+        <tr>
+            <td colspan="1"></td>
+            <td>Tempat/Tanggal Lahir</td>
+            <td>:</td>
+            <td>{{$lihat_tempat_lahir_ketua}}/{{date('d-m-Y', strtotime($lihat_tanggal_lahir_ketua))}}</td>
+        </tr>
+        <tr>
+            <td colspan="1"></td>
+            <td>Status Perkawinan</td>
+            <td>:</td>
+            <td>{{$lihat_status_perkawinan_ketua}}</td>
+        </tr>
+        <tr>
+            <td colspan="1"></td>
+            <td>Alamat</td>
+            <td>:</td>
+            <td>{{$lihat_alamat_ketua}}</td>
+        </tr>
+        <tr>
+            <td colspan="1"></td>
+            <td>Nomor Telepon/Hp</td>
+            <td>:</td>
+            <td>{{$lihat_nomor_telpon_ketua}}</td>
+        </tr>
+        <tr>
+            <td colspan="1"></td>
+            <td>Pekerjaan</td>
+            <td>:</td>
+            <td>{{$lihat_pekerjaan_ketua}}</td>
+        </tr>
     </tr>
     <tr>
+        <td class="h-25"></td>
+    </tr>
+<!-- Lainnya  -->
+    <tr>
         <td></td>
-        <td>b.Sekretaris/Sebutan Lain</td>
+        <td>b. Sekretaris/Sebutan Lain</td>
         <td>:</td>
         <td>{{$lihat_nama_sekretaris}}
         </td>
     </tr>
     <tr>
         <td></td>
-        <td>c.Bendahara/Sebutan Lain</td>
+        <td>c. Bendahara/Sebutan Lain</td>
         <td>:</td>
         <td>{{$lihat_nama_bendahara}}
         </td>
@@ -172,11 +294,15 @@
         <td>20.</td>
         <td>Lambang/Logo Organisasi</td>
         <td>:</td>
-        @php 
+        <td>Foto Terlampir</td>
+        <!-- @php 
             $this->db->where('id_ormas', $lihat_id_ormas);
             $row = $this->db->get('tb_verifikasi')->row();
-        @endphp
-        <td><img src="{{site_url()}}data-upload/{{$lihat_nama_ormas}}/{{$row->file_lambang_logo}}" width="50" height="50"></td>
+        @endphp -->
+        <!-- <td><img src="{{site_url()}}data-upload/{{$lihat_nama_ormas}}/{{$row->file_lambang_logo}}" width="50" height="50"></td> -->
+    </tr>
+    <tr>
+        <td class="h-25"></td>
     </tr>
     <tr>
         <td colspan="2" class="text-center">
@@ -184,12 +310,12 @@
         </td>
         <td colspan="2" class="text-center">
             <label>Tanjungpinang, {{date('d-m-Y')}}</label><br/>
-            <label>Kepala Badan/Kantor Kesatuan Bangsa dan Politik (Provinsi/Kabupaten/Kota)</label>
+            <label>Kepala Badan/Kantor Kesatuan Bangsa dan Politik<br> Kabupaten Bintan</label>
         </td>
     </tr>
     <tr>
-        <td colspan="2"><br/><br/><br/><br/><br/><br/><br/><br/><br/></td>
-        <td colspan="2"><br/><br/><br/><br/><br/><br/><br/><br/><br/></td>
+        <td class="h-50" colspan="2"></td>
+        <td class="h-50" colspan="2"></td>
     </tr>
     <tr>
         @php 
