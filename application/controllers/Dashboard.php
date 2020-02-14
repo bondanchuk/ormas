@@ -6,6 +6,8 @@ class Dashboard extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('model_dashboard');
+		$this->load->helper('nip_helper');
+
 	}
 	public function index()
 	{
@@ -136,7 +138,7 @@ class Dashboard extends CI_Controller
 			$output['lihat_npwp'] = $row->npwp;
 			$output['lihat_sumber_keuangan'] = $row->sumber_keuangan;
 		}
-		$mpdf = new \Mpdf\Mpdf();
+		$mpdf = new \Mpdf\Mpdf(['format' => [210, 330]]);
         $html = view('print.surat_keabsahan',$output,true);;
         $mpdf->WriteHTML($html);
         $mpdf->Output(); // opens in browser

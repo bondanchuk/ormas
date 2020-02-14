@@ -279,7 +279,7 @@
                                                     {{form_label('Lihat Surat Keabsahan')}}
                                                     <!-- {{form_input($nama_pendiri)}} -->
                                                     <!--Select Box nama Pemeriksa-->
-                                                    <a href="javascript:void(0)" class="open btn btn-primary" data-id="{{$file_lambang_logo}}" data-judul="{{'Lambang Ormas'}}" data-toggle="modal">Lihat File</a>
+                                                    <a href="javascript:void(0)" class="open btn btn-primary" data-id="{{$file_suketkeabsahan}}" data-judul="{{'Surat Keabsahan'}}" data-toggle="modal">Lihat File</a>
                                                     <!--contoh-->
                                                 </div>
                                                 <a href="#" class="btn btn-primary ">Upload Surat Keabsahan</a> <!-- Urgent! syarat uploadnya, diskusi dulu -->

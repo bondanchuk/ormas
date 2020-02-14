@@ -19,7 +19,53 @@ class Ormas extends CI_Controller
 //numpang view edit urgent!
 	public function  edit()
 	{
-		view('ormas.edit');
+		$panggil = array();
+		$data_ormas = $this->model_ormas->ambilSatuOrmas($id);
+		$data_verif = $this->model_ormas->ambilSatuVerif($id);
+		$panggil = 	[
+			'ID' => $data_ormas->id_ormas, 
+			'Nama' => $data_ormas->tanggal_daftar, 
+			'Nama' => $data_ormas->nama_ormas, 
+		];
+		foreach ($data_verif as $row) {
+			$panggil['id_ormas'] = $row->id_ormas;
+			$panggil['id_pejabat'] = $row->id_pejabat;
+			$panggil['file_lambang_logo'] = $row->file_lambang_logo;
+			$panggil['verif_01'] = $row->verif01;
+			$panggil['file_bendera_ormas'] = $row->file_bendera_ormas;
+			$panggil['verif_02'] = $row->verif02;
+			$panggil['file_surat_permohonan'] = $row->file_surat_permohonan;
+			$panggil['verif_03'] = $row->verif03;
+			$panggil['file_akta'] = $row->file_akta;
+			$panggil['verif_04'] = $row->verif04;
+			$panggil['file_ad_art'] = $row->file_ad_art;
+			$panggil['verif_05'] = $row->verif05;
+			$panggil['file_program_ormas'] = $row->file_program_ormas;
+			$panggil['verif_06'] = $row->verif06;
+			$panggil['file_skpengurus'] = $row->file_skpengurus;
+			$panggil['verif_07'] = $row->verif07;
+			$panggil['file_fc_ktpketua'] = $row->file_fc_ktpketua;
+			$panggil['verif_08'] = $row->verif08;
+			$panggil['file_fc_ktpsekretaris'] = $row->file_fc_ktpsekretaris;
+			$panggil['verif_09'] = $row->verif09;
+			$panggil['file_fc_ktpbendahara'] = $row->file_fc_ktpbendahara;
+			$panggil['verif_10'] = $row->verif10;
+			$panggil['file_sk_domisili'] = $row->file_sk_domisili;
+			$panggil['verif_11'] = $row->verif11;
+			$panggil['file_npwp'] = $row->file_npwp;
+			$panggil['verif_12'] = $row->verif12;
+			$panggil['file_fotosekretariat'] = $row->file_fotosekretariat;
+			$panggil['verif_13'] = $row->verif13;
+			$panggil['file_surat_pernyataan'] = $row->file_surat_pernyataan;
+			$panggil['verif_14'] = $row->verif14;
+			$panggil['file_daftarisian'] = $row->file_daftarisian;
+			$panggil['verif_15'] = $row->verif15;
+			$panggil['file_suketkeabsahan'] = $row->file_suketkeabsahan;
+			$panggil['verif_16'] = $row->verif16;
+			$panggil['file_skt'] = $row->file_skt;
+			$panggil['verif_17'] = $row->verif17;
+		}
+		view('ormas.edit',$panggil);
 	}
 
 	function ambil_ormas(){  

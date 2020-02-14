@@ -202,6 +202,14 @@
         <td colspan="2" class="text-center">{{$pemeriksa->Nama}}</td>
         <td colspan="2" class="text-center">{{$kepala_badan->Nama}}</td>
     </tr>
+    <tr>
+        <td colspan="2" class="text-center">{{$pemeriksa->Pangkat}}</td>
+        <td colspan="2" class="text-center">{{$kepala_badan->Pangkat}}</td>
+    </tr>
+    <tr>
+        <td colspan="2" class="text-center">{{konversi_nip($pemeriksa->NIP)}}</td>
+        <td colspan="2" class="text-center">{{konversi_nip($kepala_badan->NIP)}}</td>
+    </tr>
 </table>
 </body>
 </html>
